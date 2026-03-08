@@ -84,8 +84,8 @@ export function Contact() {
                   </div>
                 </dt>
                 <dd className="py-1.5">
-                  <a className="font-semibold text-white hover:text-green-500 transition-colors font-mono" href="tel:+1 (555) 234-5678">
-                    +1 (555) 234-5678
+                  <a className="font-semibold text-white hover:text-green-500 transition-colors font-mono" href="tel:+61 (0)401 590 258">
+                    +61 (0)401 590 258
                   </a>
                 </dd>
               </div>

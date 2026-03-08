@@ -5,7 +5,7 @@ export function About() {
   const { t } = useTranslation();
 
   const stats = [
-    { label: t('about.stats.experience'), value: '10+' },
+    { label: t('about.stats.experience'), value: '25+' },
     { label: t('about.stats.projects'), value: '50+' },
     { label: t('about.stats.clients'), value: '100%' },
     { label: t('about.stats.coffee'), value: '∞' },
