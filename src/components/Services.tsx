@@ -1,4 +1,4 @@
-import { Compass, Settings, ClipboardCheck, Users, ArrowRight, Check } from 'lucide-react';
+import { Compass, Settings, ClipboardCheck, Users, Handshake, ArrowRight, Check } from 'lucide-react';
 import { Button } from './ui/Button';
 import { useTranslation } from 'react-i18next';
 
@@ -29,6 +29,12 @@ export function Services() {
       description: t('services.items.communityManagement.description'),
       icon: Users,
       features: t('services.items.communityManagement.features', { returnObjects: true }) as string[]
+    },
+    {
+      title: t('services.items.advisoryMentoring.title'),
+      description: t('services.items.advisoryMentoring.description'),
+      icon: Handshake,
+      features: t('services.items.advisoryMentoring.features', { returnObjects: true }) as string[]
     }
   ];
 
