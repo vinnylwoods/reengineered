@@ -1,4 +1,4 @@
-import { User, Award, BookOpen, Coffee } from 'lucide-react';
+import { User, Award, UserCheck, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export function About() {
@@ -39,14 +39,14 @@ export function About() {
                 </div>
                 <div className="relative pl-9">
                   <dt className="inline font-semibold text-white">
-                    <BookOpen className="absolute left-1 top-1 h-5 w-5 text-green-500" aria-hidden="true" />
+                    <UserCheck className="absolute left-1 top-1 h-5 w-5 text-green-500" aria-hidden="true" />
                     {t('about.continuousLearner')}
                   </dt>
                   <dd className="inline">{t('about.continuousLearnerDesc')}</dd>
                 </div>
                 <div className="relative pl-9">
                   <dt className="inline font-semibold text-white">
-                    <Coffee className="absolute left-1 top-1 h-5 w-5 text-green-500" aria-hidden="true" />
+                    <ShieldCheck className="absolute left-1 top-1 h-5 w-5 text-green-500" aria-hidden="true" />
                     {t('about.coffeeEnthusiast')}
                   </dt>
                   <dd className="inline">{t('about.coffeeEnthusiastDesc')}</dd>

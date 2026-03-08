@@ -1,4 +1,4 @@
-import { Briefcase, PenTool, TrendingUp, Users, ArrowRight, Check } from 'lucide-react';
+import { Compass, Settings, ClipboardCheck, Users, ArrowRight, Check } from 'lucide-react';
 import { Button } from './ui/Button';
 import { useTranslation } from 'react-i18next';
 
@@ -9,19 +9,19 @@ export function Services() {
     {
       title: t('services.items.contentStrategy.title'),
       description: t('services.items.contentStrategy.description'),
-      icon: PenTool,
+      icon: Compass,
       features: t('services.items.contentStrategy.features', { returnObjects: true }) as string[]
     },
     {
       title: t('services.items.businessConsulting.title'),
       description: t('services.items.businessConsulting.description'),
-      icon: TrendingUp,
+      icon: Settings,
       features: t('services.items.businessConsulting.features', { returnObjects: true }) as string[]
     },
     {
       title: t('services.items.brandDevelopment.title'),
       description: t('services.items.brandDevelopment.description'),
-      icon: Briefcase,
+      icon: ClipboardCheck,
       features: t('services.items.brandDevelopment.features', { returnObjects: true }) as string[]
     },
     {
@@ -36,7 +36,7 @@ export function Services() {
     { step: '01', title: t('services.process.steps.discovery.title'), description: t('services.process.steps.discovery.description') },
     { step: '02', title: t('services.process.steps.strategy.title'), description: t('services.process.steps.strategy.description') },
     { step: '03', title: t('services.process.steps.execution.title'), description: t('services.process.steps.execution.description') },
-    { step: '04', title: t('services.process.steps.optimization.title'), description: t('services.process.steps.optimization.description') },
+    { step: '04', title: t('services.process.steps.optimisation.title'), description: t('services.process.steps.optimisation.description') },
   ];
 
   return (
