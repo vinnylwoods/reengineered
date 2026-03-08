@@ -72,7 +72,7 @@ export function Contact() {
                 </dt>
                 <dd className="py-1.5">
                   <a className="font-semibold text-white hover:text-green-500 transition-colors font-mono" href="mailto:hello@example.com">
-                    hello@example.com
+                    vinny@reengineered.com.au
                   </a>
                 </dd>
               </div>
@@ -96,7 +96,7 @@ export function Contact() {
                     <MapPin className="h-5 w-5 text-green-500" aria-hidden="true" />
                   </div>
                 </dt>
-                <dd className="py-1.5 text-gray-300 font-mono text-sm">
+                <dd className="py-1.5 text-gray-300 font-semibold text-white">
                   <Trans i18nKey="contact.address" components={{ br: <br /> }} />
                 </dd>
               </div>

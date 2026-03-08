@@ -7,11 +7,11 @@
     "getInTouch": "Get in touch"
   },
   "hero": {
-    "badge": "Systems Operational",
+    "badge": "Ready to Deploy",
     "title": "<1>(re)</1><2>ngineering <br/> <2>the Future.</2>",
     "description": "Flexible strategic leadership to help organisations navigate complex technology landscapes and drive clear measurable outcomes.",
-    "initialiseProject": "Initialise Project",
-    "viewDocumentation": "View Documentation",
+    "initialiseProject": "Initialise Program",
+    "viewDocumentation": "View More",
     "poweredBy": "Powered by",
     "terminal": {
       "header": "bash — 80x24",
@@ -48,43 +48,43 @@
   },
   "services": {
     "badge": "/ SERVICES",
-    "title": "Services designed for growth",
-    "description": "I offer a comprehensive range of services tailored to meet the unique needs of content creators and forward-thinking businesses.",
+    "title": "Advisory services designed to be actioned",
+    "description": "(Re)ngineered offers services tailored to meet the unique needs of your organisation.",
     "items": {
       "contentStrategy": {
-        "title": "Content Strategy",
+        "title": "Technology Strategy",
         "description": "Data-driven content plans aligned with your business goals to drive engagement, retention, and conversion across all channels.",
         "features": [
-          "Audience Analysis",
-          "Content Calendar",
-          "SEO Optimisation"
+          "Business goals and alignmment",
+          "Investment strategy and ROI",
+          "Navigating complexity and risk"
         ]
       },
       "businessConsulting": {
-        "title": "Business Consulting",
+        "title": "Operational Excellence",
         "description": "Strategic advice to optimise your operations, identify new growth opportunities, and streamline your workflow.",
         "features": [
-          "Market Research",
-          "Competitor Analysis",
-          "Growth Hacking"
+          "Delivery Productivity",
+          "Process maturity",
+          "Operarational playbooks"
         ]
       },
       "brandDevelopment": {
-        "title": "Brand Development",
-        "description": "Building a strong, recognisable brand identity that resonates with your target audience and stands out in the market.",
+        "title": "Maturity Assessment",
+        "description": "Benchmarking your Product Delivery, Engineering Excellence, Data Quality, and AI Readiness against industry best practices to identify areas for improvement and growth.",
         "features": [
-          "Visual Identity",
-          "Tone of Voice",
-          "Brand Guidelines"
+          "Engineering Excellence",
+          "Data Quality",
+          "AI Readiness"
         ]
       },
       "communityManagement": {
-        "title": "Community Management",
-        "description": "Nurturing your community to foster loyalty and advocacy for your brand, turning followers into superfans.",
+        "title": "Team scaling and growth",
+        "description": "Develop a strategy from recruitment to retention to ensure you can compete with industry leaders in your space.",
         "features": [
-          "Engagement Strategy",
-          "Crisis Management",
-          "User Feedback"
+          "Attracting the best talent",
+          "Professional development",
+          "Establishing your name in the Technology community"
         ]
       }
     },
@@ -98,7 +98,7 @@
           "description": "We start by understanding your business, goals, and audience."
         },
         "strategy": {
-          "title": "Strategy",
+          "title": "Plan",
           "description": "I develop a tailored roadmap to achieve your objectives."
         },
         "execution": {
@@ -142,10 +142,10 @@
   "contact": {
     "badge": "/ CONTACT",
     "title": "Let's work together",
-    "description": "Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you as soon as possible.",
+    "description": "Have a project in mind or would you like to learn more about our services? Send us a message and we'll get back to you as soon as possible.",
     "infoTitle": "Contact Information",
     "infoDesc": "Prefer to reach out directly? Here's how you can find us.",
-    "address": "Drummoyne<br/>NSW, 2047",
+    "address": "Sydney, NSW",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -162,7 +162,7 @@
     }
   },
   "footer": {
-    "description": "Building digital experiences that matter. Focused on performance, accessibility, and modern design.",
+    "description": "Stregthening technology businesses.",
     "navigation": "Navigation",
     "legal": "Legal",
     "privacyPolicy": "Privacy Policy",

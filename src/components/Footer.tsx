@@ -46,7 +46,7 @@ export function Footer() {
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white font-mono">{t('footer.navigation')}</h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {['Home', 'About', 'Services', 'Recommendations', 'Contact'].map((item) => (
+                  {['Home', 'About', 'Services', 'Recommendations'].map((item) => (
                     <li key={item}>
                       <a href={`#${item.toLowerCase()}`} className="text-sm leading-6 text-gray-400 hover:text-green-500 transition-colors font-mono">
                         {t(`nav.${item.toLowerCase()}`)}
