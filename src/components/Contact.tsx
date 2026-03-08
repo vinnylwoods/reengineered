@@ -71,7 +71,7 @@ export function Contact() {
                   </div>
                 </dt>
                 <dd className="py-1.5">
-                  <a className="font-semibold text-white hover:text-green-500 transition-colors font-mono" href="mailto:hello@example.com">
+                  <a className="font-semibold text-white hover:text-green-500 transition-colors font-mono" href="mailto:vinny@reengineered.com.au">
                     vinny@reengineered.com.au
                   </a>
                 </dd>
