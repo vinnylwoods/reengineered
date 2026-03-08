@@ -1,33 +1,42 @@
 import { Star, Quote } from 'lucide-react';
-
-const testimonials = [
-  {
-    body: 'Working with this team was a game-changer for our business. The content strategy provided was clear, actionable, and delivered immediate results.',
-    author: {
-      name: 'Sarah Johnson',
-      role: 'CEO at TechStart',
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    body: 'I highly recommend their services to anyone looking to elevate their brand. Professional, creative, and truly dedicated to client success.',
-    author: {
-      name: 'Michael Chen',
-      role: 'Founder of GreenLife',
-      imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    body: 'The attention to detail and understanding of our niche was impressive. A fantastic partner for our growth journey.',
-    author: {
-      name: 'Emily Davis',
-      role: 'Marketing Director',
-      imageUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export function Recommendations() {
+  const { t } = useTranslation();
+
+  const images = [
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  ];
+
+  const testimonials = [
+    {
+      body: t('recommendations.items.0.body'),
+      author: {
+        name: t('recommendations.items.0.author.name'),
+        role: t('recommendations.items.0.author.role'),
+        imageUrl: images[0],
+      },
+    },
+    {
+      body: t('recommendations.items.1.body'),
+      author: {
+        name: t('recommendations.items.1.author.name'),
+        role: t('recommendations.items.1.author.role'),
+        imageUrl: images[1],
+      },
+    },
+    {
+      body: t('recommendations.items.2.body'),
+      author: {
+        name: t('recommendations.items.2.author.name'),
+        role: t('recommendations.items.2.author.role'),
+        imageUrl: images[2],
+      },
+    },
+  ];
+
   return (
     <section id="recommendations" className="py-24 bg-gray-950 relative isolate overflow-hidden">
       {/* Background decoration */}
@@ -54,9 +63,9 @@ export function Recommendations() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">/ TESTIMONIALS</h2>
+          <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">{t('recommendations.badge')}</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Trusted by clients worldwide
+            {t('recommendations.title')}
           </p>
         </div>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">

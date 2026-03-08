@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        oswald: ['Oswald', 'sans-serif'],
+      },
       colors: {
         // We can use CSS variables for dynamic theme switching if needed
         primary: 'rgb(var(--color-primary) / <alpha-value>)',

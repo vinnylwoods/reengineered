@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from './ui/Button';
 import { Logo } from './ui/Logo';
 
-const navigation = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Recommendations', href: '#recommendations' },
-  { name: 'Contact', href: '#contact' },
-];
-
 export function Navbar() {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const navigation = [
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.recommendations'), href: '#recommendations' },
+    { name: t('nav.contact'), href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,9 +52,9 @@ export function Navbar() {
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-4">
             <Button variant="primary" size="sm" onClick={() => window.location.href = '#contact'} className="shadow-lg shadow-green-900/20 hover:shadow-green-500/20 transition-all border border-green-500/20">
-              Get in touch
+              {t('nav.getInTouch')}
             </Button>
           </div>
         </nav>
@@ -67,14 +69,16 @@ export function Navbar() {
               <a href="#" className="-m-1.5 p-1.5">
                 <Logo className="text-white" />
               </a>
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="sr-only">Close menu</span>
-                <X className="h-6 w-6" aria-hidden="true" />
-              </button>
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  className="-m-2.5 rounded-md p-2.5 text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <X className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </div>
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-700/50">
@@ -95,7 +99,7 @@ export function Navbar() {
                     setMobileMenuOpen(false);
                     window.location.href = '#contact';
                   }}>
-                    Get in touch
+                    {t('nav.getInTouch')}
                   </Button>
                 </div>
               </div>

@@ -1,53 +1,56 @@
 import { Briefcase, PenTool, TrendingUp, Users, ArrowRight, Check } from 'lucide-react';
 import { Button } from './ui/Button';
-
-const services = [
-  {
-    title: 'Content Strategy',
-    description: 'Data-driven content plans aligned with your business goals to drive engagement, retention, and conversion across all channels.',
-    icon: PenTool,
-    features: ['Audience Analysis', 'Content Calendar', 'SEO Optimization']
-  },
-  {
-    title: 'Business Consulting',
-    description: 'Strategic advice to optimize your operations, identify new growth opportunities, and streamline your workflow.',
-    icon: TrendingUp,
-    features: ['Market Research', 'Competitor Analysis', 'Growth Hacking']
-  },
-  {
-    title: 'Brand Development',
-    description: 'Building a strong, recognizable brand identity that resonates with your target audience and stands out in the market.',
-    icon: Briefcase,
-    features: ['Visual Identity', 'Tone of Voice', 'Brand Guidelines']
-  },
-  {
-    title: 'Community Management',
-    description: 'Nurturing your community to foster loyalty and advocacy for your brand, turning followers into superfans.',
-    icon: Users,
-    features: ['Engagement Strategy', 'Crisis Management', 'User Feedback']
-  }
-];
-
-const process = [
-  { step: '01', title: 'Discovery', description: 'We start by understanding your business, goals, and audience.' },
-  { step: '02', title: 'Strategy', description: 'I develop a tailored roadmap to achieve your objectives.' },
-  { step: '03', title: 'Execution', description: 'We implement the strategy with precision and creativity.' },
-  { step: '04', title: 'Optimization', description: 'We track results and refine the approach for maximum impact.' },
-];
+import { useTranslation } from 'react-i18next';
 
 export function Services() {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      title: t('services.items.contentStrategy.title'),
+      description: t('services.items.contentStrategy.description'),
+      icon: PenTool,
+      features: t('services.items.contentStrategy.features', { returnObjects: true }) as string[]
+    },
+    {
+      title: t('services.items.businessConsulting.title'),
+      description: t('services.items.businessConsulting.description'),
+      icon: TrendingUp,
+      features: t('services.items.businessConsulting.features', { returnObjects: true }) as string[]
+    },
+    {
+      title: t('services.items.brandDevelopment.title'),
+      description: t('services.items.brandDevelopment.description'),
+      icon: Briefcase,
+      features: t('services.items.brandDevelopment.features', { returnObjects: true }) as string[]
+    },
+    {
+      title: t('services.items.communityManagement.title'),
+      description: t('services.items.communityManagement.description'),
+      icon: Users,
+      features: t('services.items.communityManagement.features', { returnObjects: true }) as string[]
+    }
+  ];
+
+  const process = [
+    { step: '01', title: t('services.process.steps.discovery.title'), description: t('services.process.steps.discovery.description') },
+    { step: '02', title: t('services.process.steps.strategy.title'), description: t('services.process.steps.strategy.description') },
+    { step: '03', title: t('services.process.steps.execution.title'), description: t('services.process.steps.execution.description') },
+    { step: '04', title: t('services.process.steps.optimization.title'), description: t('services.process.steps.optimization.description') },
+  ];
+
   return (
     <section id="services" className="py-24 bg-gray-950 relative isolate">
       <div className="absolute inset-0 bg-grid-pattern opacity-30 -z-10" />
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">/ SERVICES</h2>
+          <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">{t('services.badge')}</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Services designed for growth
+            {t('services.title')}
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-400">
-            I offer a comprehensive range of services tailored to meet the unique needs of content creators and forward-thinking businesses.
+            {t('services.description')}
           </p>
         </div>
         
@@ -73,7 +76,7 @@ export function Services() {
 
               <div className="mt-auto">
                 <Button variant="outline" size="sm" className="w-full justify-between border-gray-700 text-gray-300 hover:text-white hover:border-green-500 hover:bg-gray-800">
-                  Learn more <ArrowRight className="w-4 h-4" />
+                  {t('services.learnMore')} <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
             </div>
@@ -83,9 +86,9 @@ export function Services() {
         {/* Process Section */}
         <div className="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-mono">My Process</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-mono">{t('services.process.title')}</h2>
             <p className="mt-6 text-lg leading-8 text-gray-400">
-              A simple, transparent approach to delivering results.
+              {t('services.process.description')}
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-4">

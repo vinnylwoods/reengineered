@@ -1,7 +1,10 @@
 import { ArrowRight } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 import { Button } from './ui/Button';
 
 export function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section id="home" className="relative isolate pt-14 lg:pt-0 min-h-screen flex items-center overflow-hidden bg-gray-950">
       {/* Background Gradients & Grid */}
@@ -14,30 +17,35 @@ export function Hero() {
            {/* Badge */}
            <div className="inline-flex items-center rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-sm font-medium text-green-400 backdrop-blur-sm mb-8 animate-fade-in-up">
              <span className="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-             Systems Operational
+             {t('hero.badge')}
            </div>
            
-           <h1 className="max-w-lg text-4xl font-bold tracking-tight text-white sm:text-6xl text-balance font-mono">
-             r<span className="text-green-500">(e)</span>ngineering <br/>
-             <span className="text-gray-500">the Future.</span>
+           <h1 className="max-w-lg text-4xl font-bold tracking-tight text-white sm:text-6xl text-balance font-oswald">
+             <Trans 
+               i18nKey="hero.title" 
+               components={{ 
+                 1: <span className="text-green-500" />, 
+                 2: <span className="text-gray-500" /> 
+               }} 
+             />
            </h1>
            
            <p className="mt-6 text-lg leading-8 text-gray-400 max-w-xl">
-             Advanced consulting and content strategies for the digital age. We deconstruct complex problems and engineer scalable, high-performance solutions.
+             {t('hero.description')}
            </p>
            
            {/* Buttons */}
            <div className="mt-10 flex items-center gap-x-6">
              <Button size="lg" className="bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-900/20 border border-green-500/50" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-               Initialize Project
+               {t('hero.initializeProject')}
              </Button>
              <a href="#about" className="text-sm font-semibold leading-6 text-white hover:text-green-400 transition-colors flex items-center gap-2 group">
-               View Documentation <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+               {t('hero.viewDocumentation')} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
              </a>
            </div>
            
            <div className="mt-14 pt-10 border-t border-gray-800">
-            <p className="text-sm font-semibold text-gray-500 mb-4 font-mono uppercase tracking-wider">Powered by</p>
+            <p className="text-sm font-semibold text-gray-500 mb-4 font-mono uppercase tracking-wider">{t('hero.poweredBy')}</p>
             <div className="flex gap-x-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
                {/* Tech-focused placeholders */}
                <span className="text-xl font-bold text-white font-mono">REACT</span>
@@ -58,7 +66,7 @@ export function Hero() {
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80 group-hover:bg-yellow-500 transition-colors"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500/80 group-hover:bg-green-500 transition-colors"></div>
               </div>
-              <div className="text-xs text-gray-500 font-mono">bash — 80x24</div>
+              <div className="text-xs text-gray-500 font-mono">{t('hero.terminal.header')}</div>
             </div>
             
             {/* Terminal Content */}
@@ -66,28 +74,28 @@ export function Hero() {
               <div className="flex">
                 <span className="text-green-500 mr-2">➜</span>
                 <span className="text-blue-400 mr-2">~</span>
-                <span className="text-gray-100">./init_sequence.sh --optimize</span>
+                <span className="text-gray-100">{t('hero.terminal.command')}</span>
               </div>
               
               <div className="space-y-1 text-gray-400">
                 <div className="flex items-center gap-2">
-                   <span className="text-green-500">✔</span> Loading core modules...
+                   <span className="text-green-500">✔</span> {t('hero.terminal.loadingCore')}
                 </div>
                 <div className="flex items-center gap-2">
-                   <span className="text-green-500">✔</span> Analyzing business logic...
+                   <span className="text-green-500">✔</span> {t('hero.terminal.analysingBusiness')}
                 </div>
                 <div className="flex items-center gap-2">
-                   <span className="text-green-500">✔</span> Optimizing performance...
+                   <span className="text-green-500">✔</span> {t('hero.terminal.optimisingPerformance')}
                 </div>
                 <div className="flex items-center gap-2">
-                   <span className="text-green-500">✔</span> Generating revenue streams...
+                   <span className="text-green-500">✔</span> {t('hero.terminal.generatingRevenue')}
                 </div>
               </div>
 
               <div className="pt-4 border-t border-gray-800/50">
-                <div className="text-gray-400 mb-2">&gt; <span className="text-blue-400">Strategy</span> compiled successfully.</div>
-                <div className="text-gray-400">&gt; <span className="text-blue-400">Growth</span> vector calculated.</div>
-                <div className="text-gray-400">&gt; <span className="text-green-400">Ready to deploy.</span></div>
+                <div className="text-gray-400 mb-2">&gt; <Trans i18nKey="hero.terminal.strategyCompiled" components={[<span key="0" className="text-blue-400" />]} /></div>
+                <div className="text-gray-400">&gt; <Trans i18nKey="hero.terminal.growthVector" components={[<span key="0" className="text-blue-400" />]} /></div>
+                <div className="text-gray-400">&gt; <span className="text-green-400">{t('hero.terminal.readyToDeploy')}</span></div>
               </div>
               
               <div className="flex pt-2">

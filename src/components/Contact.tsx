@@ -1,8 +1,10 @@
 import { useState, type FormEvent, type ChangeEvent } from 'react';
 import { Mail, MapPin, Send, Phone } from 'lucide-react';
 import { Button } from './ui/Button';
+import { useTranslation, Trans } from 'react-i18next';
 
 export function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,6 +23,7 @@ export function Contact() {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
           'form-name': 'contact',
+          'bot-field': '',
           ...formData
         }).toString()
       });
@@ -46,18 +49,18 @@ export function Contact() {
       <div className="absolute inset-0 bg-grid-pattern opacity-20 -z-10" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">/ CONTACT</h2>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Let's work together</h2>
+          <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">{t('contact.badge')}</h2>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">{t('contact.title')}</h2>
           <p className="mt-2 text-lg leading-8 text-gray-400">
-            Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you as soon as possible.
+            {t('contact.description')}
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
           <div className="relative">
             <div className="absolute -inset-4 -z-10 rounded-xl bg-gray-900/50 backdrop-blur ring-1 ring-white/10" />
-            <h3 className="text-2xl font-bold tracking-tight text-white font-mono">Contact Information</h3>
+            <h3 className="text-2xl font-bold tracking-tight text-white font-mono">{t('contact.infoTitle')}</h3>
             <p className="mt-6 text-base leading-7 text-gray-400">
-              Prefer to reach out directly? Here's how you can find us.
+              {t('contact.infoDesc')}
             </p>
             <dl className="mt-8 space-y-6 text-base leading-7 text-gray-400">
               <div className="flex gap-x-4">
@@ -94,8 +97,7 @@ export function Contact() {
                   </div>
                 </dt>
                 <dd className="py-1.5 text-gray-300 font-mono text-sm">
-                  123 Business Avenue, Suite 100<br />
-                  New York, NY 10001
+                  <Trans i18nKey="contact.address" components={{ br: <br /> }} />
                 </dd>
               </div>
             </dl>
@@ -113,7 +115,7 @@ export function Contact() {
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div className="sm:col-span-2">
                 <label htmlFor="name" className="block text-sm font-semibold leading-6 text-white font-mono">
-                  Name
+                  {t('contact.form.name')}
                 </label>
                 <div className="mt-2.5">
                   <input
@@ -125,13 +127,13 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 transition-shadow font-mono"
-                    placeholder="John Doe"
+                    placeholder={t('contact.form.placeholders.name')}
                   />
                 </div>
               </div>
               <div className="sm:col-span-2">
                 <label htmlFor="email" className="block text-sm font-semibold leading-6 text-white font-mono">
-                  Email
+                  {t('contact.form.email')}
                 </label>
                 <div className="mt-2.5">
                   <input
@@ -143,13 +145,13 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 transition-shadow font-mono"
-                    placeholder="john@example.com"
+                    placeholder={t('contact.form.placeholders.email')}
                   />
                 </div>
               </div>
               <div className="sm:col-span-2">
                 <label htmlFor="message" className="block text-sm font-semibold leading-6 text-white font-mono">
-                  Message
+                  {t('contact.form.message')}
                 </label>
                 <div className="mt-2.5">
                   <textarea
@@ -160,7 +162,7 @@ export function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 transition-shadow resize-none font-mono"
-                    placeholder="Tell us about your project..."
+                    placeholder={t('contact.form.placeholders.message')}
                   />
                 </div>
               </div>
@@ -172,7 +174,7 @@ export function Contact() {
                 disabled={status === 'submitting'}
                 variant="primary"
               >
-                {status === 'submitting' ? 'Sending...' : 'Send Message'}
+                {status === 'submitting' ? t('contact.form.submitting') : t('contact.form.submit')}
                 <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
@@ -185,7 +187,7 @@ export function Contact() {
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm font-medium text-green-400 font-mono">Message sent successfully! We'll be in touch shortly.</p>
+                    <p className="text-sm font-medium text-green-400 font-mono">{t('contact.form.success')}</p>
                   </div>
                 </div>
               </div>
@@ -199,7 +201,7 @@ export function Contact() {
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm font-medium text-red-400 font-mono">Failed to send message. Please try again later.</p>
+                    <p className="text-sm font-medium text-red-400 font-mono">{t('contact.form.error')}</p>
 
                   </div>
                 </div>

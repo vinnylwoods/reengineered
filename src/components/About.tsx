@@ -1,13 +1,16 @@
 import { User, Award, BookOpen, Coffee } from 'lucide-react';
-
-const stats = [
-  { label: 'Years Experience', value: '10+' },
-  { label: 'Projects Delivered', value: '50+' },
-  { label: 'Happy Clients', value: '100%' },
-  { label: 'Coffees Consumed', value: '∞' },
-];
+import { useTranslation } from 'react-i18next';
 
 export function About() {
+  const { t } = useTranslation();
+
+  const stats = [
+    { label: t('about.stats.experience'), value: '10+' },
+    { label: t('about.stats.projects'), value: '50+' },
+    { label: t('about.stats.clients'), value: '100%' },
+    { label: t('about.stats.coffee'), value: '∞' },
+  ];
+
   return (
     <section id="about" className="py-24 bg-gray-900 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -15,40 +18,38 @@ export function About() {
           
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">/ ABOUT_ME</h2>
+              <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">{t('about.badge')}</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Passionate about meaningful content & strategy
+                {t('about.title')}
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                My journey began in digital marketing, where I realized that authentic content is the key to building lasting relationships with customers. 
-                I believe in transparency, quality, and results-driven strategies.
+                {t('about.p1')}
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                I've worked with startups, non-profits, and Fortune 500 companies to refine their messaging and amplify their reach.
-                When I'm not strategizing, you can find me hiking the nearest trail or experimenting with new coffee brews.
+                {t('about.p2')}
               </p>
               
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
                 <div className="relative pl-9">
                   <dt className="inline font-semibold text-white">
                     <Award className="absolute left-1 top-1 h-5 w-5 text-green-500" aria-hidden="true" />
-                    Certified Expert
+                    {t('about.certifiedExpert')}
                   </dt>
-                  <dd className="inline"> in Digital Marketing and Content Strategy.</dd>
+                  <dd className="inline">{t('about.certifiedExpertDesc')}</dd>
                 </div>
                 <div className="relative pl-9">
                   <dt className="inline font-semibold text-white">
                     <BookOpen className="absolute left-1 top-1 h-5 w-5 text-green-500" aria-hidden="true" />
-                    Continuous Learner
+                    {t('about.continuousLearner')}
                   </dt>
-                  <dd className="inline"> always staying ahead of industry trends.</dd>
+                  <dd className="inline">{t('about.continuousLearnerDesc')}</dd>
                 </div>
                 <div className="relative pl-9">
                   <dt className="inline font-semibold text-white">
                     <Coffee className="absolute left-1 top-1 h-5 w-5 text-green-500" aria-hidden="true" />
-                    Coffee Enthusiast
+                    {t('about.coffeeEnthusiast')}
                   </dt>
-                  <dd className="inline"> fueled by quality beans and good conversation.</dd>
+                  <dd className="inline">{t('about.coffeeEnthusiastDesc')}</dd>
                 </div>
               </dl>
             </div>
@@ -59,10 +60,12 @@ export function About() {
                 <div className="absolute -top-4 -left-4 bg-green-600 rounded-xl p-4 shadow-lg shadow-green-900/50">
                   <User className="text-white w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 mt-4 text-white font-mono">Who I Am</h3>
+                <h3 className="text-2xl font-bold mb-4 mt-4 text-white font-mono">{t('about.whoIAm')}</h3>
                 <p className="text-gray-300 mb-8 leading-relaxed">
-                  With over a decade of experience, I help entrepreneurs find their voice and scale their impact. 
-                  I don't just deliver reports; I partner with you to implement changes that matter.
+                  {t('about.whoIAmDesc1')}
+                </p>
+                <p className="text-gray-300 mb-8 leading-relaxed">
+                  {t('about.whoIAmDesc2')}
                 </p>
                 
                 <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-700">

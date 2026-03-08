@@ -1,0 +1,176 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "recommendations": "Recommendations",
+    "contact": "Contact",
+    "getInTouch": "Get in touch"
+  },
+  "hero": {
+    "badge": "Systems Operational",
+    "title": "<1>(re)</1><2>ngineering <br/> <2>the Future.</2>",
+    "description": "Advanced consulting and content strategies for the digital age. We deconstruct complex problems and engineer scalable, high-performance solutions.",
+    "initialiseProject": "Initialise Project",
+    "viewDocumentation": "View Documentation",
+    "poweredBy": "Powered by",
+    "terminal": {
+      "header": "bash — 80x24",
+      "command": "./init_sequence.sh --optimize",
+      "loadingCore": "Loading core challenges...",
+      "analysingBusiness": "Analysing opportunities...",
+      "optimisingPerformance": "Researching emerging technologies...",
+      "generatingRevenue": "Generating technology strategy...",
+      "strategyCompiled": "<0>Strategy</0> compiled successfully.",
+      "growthVector": "<0>Growth</0> outcomes measured.",
+      "readyToDeploy": "Ready to deploy."
+    }
+  },
+  "about": {
+    "badge": "/ ABOUT_ME",
+    "title": "Bringing together Engineering, Data, and AI",
+    "p1": "A product-focused technology executive and people leader with a proven track record of scaling engineering and data teams across startup, midsize, and enterprise levels (Atlassian, Qantas, Prezzee).",
+    "p2": "With the advent of AI. my experience puts in a unique position to drive technology strategy for modern organisations, enabling them to harness the power of data and automation to drive growth and innovation.",
+    "certifiedExpert": "Strategic leadership",
+    "certifiedExpertDesc": " in Engineering, Data, and AI.",
+    "continuousLearner": "Expert advisor",
+    "continuousLearnerDesc": " that fits your timeline and budget.",
+    "coffeeEnthusiast": "Trusted technology partner",
+    "coffeeEnthusiastDesc": " delivering pragmatic solutions to complex problems.",
+    "whoIAm": "Who I Am",
+    "whoIAmDesc1": "Orginally from the UK I have over 30 years o experience in the UK, US and Australia. I help solve problems for organisations looking to scale or mature.",
+    "whoIAmDesc2": "I can help build, implement, and drive your technical strategy across Engineering, Data and AI.",
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Delivered",
+      "clients": "Happy Clients",
+      "coffee": "Coffees Consumed"
+    }
+  },
+  "services": {
+    "badge": "/ SERVICES",
+    "title": "Services designed for growth",
+    "description": "I offer a comprehensive range of services tailored to meet the unique needs of content creators and forward-thinking businesses.",
+    "items": {
+      "contentStrategy": {
+        "title": "Content Strategy",
+        "description": "Data-driven content plans aligned with your business goals to drive engagement, retention, and conversion across all channels.",
+        "features": [
+          "Audience Analysis",
+          "Content Calendar",
+          "SEO Optimisation"
+        ]
+      },
+      "businessConsulting": {
+        "title": "Business Consulting",
+        "description": "Strategic advice to optimise your operations, identify new growth opportunities, and streamline your workflow.",
+        "features": [
+          "Market Research",
+          "Competitor Analysis",
+          "Growth Hacking"
+        ]
+      },
+      "brandDevelopment": {
+        "title": "Brand Development",
+        "description": "Building a strong, recognisable brand identity that resonates with your target audience and stands out in the market.",
+        "features": [
+          "Visual Identity",
+          "Tone of Voice",
+          "Brand Guidelines"
+        ]
+      },
+      "communityManagement": {
+        "title": "Community Management",
+        "description": "Nurturing your community to foster loyalty and advocacy for your brand, turning followers into superfans.",
+        "features": [
+          "Engagement Strategy",
+          "Crisis Management",
+          "User Feedback"
+        ]
+      }
+    },
+    "learnMore": "Learn more",
+    "process": {
+      "title": "My Process",
+      "description": "A simple, transparent approach to delivering results.",
+      "steps": {
+        "discovery": {
+          "title": "Discovery",
+          "description": "We start by understanding your business, goals, and audience."
+        },
+        "strategy": {
+          "title": "Strategy",
+          "description": "I develop a tailored roadmap to achieve your objectives."
+        },
+        "execution": {
+          "title": "Execution",
+          "description": "We implement the strategy with precision and creativity."
+        },
+        "optimisation": {
+          "title": "Optimisation",
+          "description": "We track results and refine the approach for maximum impact."
+        }
+      }
+    }
+  },
+  "recommendations": {
+    "badge": "/ TESTIMONIALS",
+    "title": "Trusted by clients worldwide",
+    "items": [
+      {
+        "body": "Working with this team was a game-changer for our business. The content strategy provided was clear, actionable, and delivered immediate results.",
+        "author": {
+          "name": "Sarah Johnson",
+          "role": "CEO at TechStart"
+        }
+      },
+      {
+        "body": "I highly recommend their services to anyone looking to elevate their brand. Professional, creative, and truly dedicated to client success.",
+        "author": {
+          "name": "Michael Chen",
+          "role": "Founder of GreenLife"
+        }
+      },
+      {
+        "body": "The attention to detail and understanding of our niche was impressive. A fantastic partner for our growth journey.",
+        "author": {
+          "name": "Emily Davis",
+          "role": "Marketing Director"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "badge": "/ CONTACT",
+    "title": "Let's work together",
+    "description": "Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you as soon as possible.",
+    "infoTitle": "Contact Information",
+    "infoDesc": "Prefer to reach out directly? Here's how you can find us.",
+    "address": "123 Business Avenue, Suite 100<br/>New York, NY 10001",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Message sent successfully! We'll be in touch shortly.",
+      "error": "Failed to send message. Please try again later.",
+      "placeholders": {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "message": "Tell us about your project..."
+      }
+    }
+  },
+  "footer": {
+    "description": "Building digital experiences that matter. Focused on performance, accessibility, and modern design.",
+    "navigation": "Navigation",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "privacyContent": "We value your privacy and are committed to protecting your personal data. We only collect information necessary to provide our services and improve your experience. We do not sell your data to third parties. Any data submitted via the contact form is stored securely and used only for communication purposes.",
+    "termsContent": "By using this website, you agree to comply with and be bound by the following terms and conditions of use. Content on this site is for general information only and is subject to change without notice. We strive for accuracy but cannot guarantee that all information is perfectly up to date at all times.",
+    "backToTop": "Back to top",
+    "rights": "All rights reserved."
+  }
+}
