@@ -10,7 +10,7 @@ export function Logo({ className, accentColor = "text-green-500", ...props }: Lo
   return (
     <div className={cn("flex items-center select-none font-oswald text-4xl font-bold tracking-tight", className)} {...props}>
       <span className={cn(accentColor, "font-extrabold")}>(re)</span>
-      <span>ngineered</span>
+      <span>engineered</span>
     </div>
   );
 }

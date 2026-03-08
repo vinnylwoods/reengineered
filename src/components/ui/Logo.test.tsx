@@ -5,7 +5,7 @@ describe('Logo', () => {
   it('renders brand text', () => {
     render(<Logo />);
     expect(screen.getByText('(re)')).toBeInTheDocument();
-    expect(screen.getByText('ngineered')).toBeInTheDocument();
+    expect(screen.getByText('engineered')).toBeInTheDocument();
   });
 
   it('applies default accent color', () => {

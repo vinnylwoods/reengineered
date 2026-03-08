@@ -8,7 +8,7 @@
   },
   "hero": {
     "badge": "Ready to Deploy",
-    "title": "<1>(re)</1><2>ngineering <br/> <2>the Future.</2>",
+    "title": "<1>(re)</1><2>engineering <br/> <2>the Future.</2>",
     "description": "Flexible strategic leadership to help organisations navigate complex technology landscapes and drive clear measurable outcomes.",
     "initialiseProject": "Initialise Program",
     "viewDocumentation": "View More",
@@ -37,7 +37,7 @@
     "coffeeEnthusiast": "Trusted technology partner",
     "coffeeEnthusiastDesc": " delivering pragmatic solutions to complex problems.",
     "whoIAm": "Who I Am",
-    "whoIAmDesc1": "Orginally from the UK I have over 30 years of experience in the UK, US and Australia. I help solve problems for organisations looking to scale or mature.",
+    "whoIAmDesc1": "My name is Vinny Lawrenson-Woods. I'm orginally from the UK I have over 25 years of experience in the UK, US and Australia. I help solve problems for organisations looking to scale or mature.",
     "whoIAmDesc2": "I can help build, implement, and drive your technical strategy and roadnmap across Engineering, Data and AI.",
     "stats": {
       "experience": "Years Experience",
@@ -49,7 +49,7 @@
   "services": {
     "badge": "/ SERVICES",
     "title": "Advisory services designed to be actioned",
-    "description": "(Re)ngineered offers services tailored to meet the unique needs of your organisation.",
+    "description": "(Re)engineered offers services tailored to meet the unique needs of your organisation.",
     "items": {
       "contentStrategy": {
         "title": "Technology Strategy",

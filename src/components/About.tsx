@@ -1,4 +1,4 @@
-import { User, Award, UserCheck, ShieldCheck } from 'lucide-react';
+import { Award, UserCheck, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export function About() {
@@ -56,11 +56,16 @@ export function About() {
           </div>
           
           <div className="lg:order-last">
-             <div className="relative pl-6 pt-6 bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-xl ring-1 ring-white/10 p-8 transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-gray-700">
-                <div className="absolute -top-4 -left-4 bg-green-600 rounded-xl p-4 shadow-lg shadow-green-900/50">
-                  <User className="text-white w-8 h-8" />
+             <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-xl ring-1 ring-white/10 p-8 border border-gray-700">
+                <div className="flex items-center gap-4 mb-4">
+                  <img
+                    src="/profile.jpg"
+                    alt="Profile"
+                    loading="lazy"
+                    className="h-20 w-20 rounded-xl object-cover ring-1 ring-white/10 shadow-lg shadow-green-900/20"
+                  />
+                  <h3 className="text-2xl font-bold text-white font-mono">{t('about.whoIAm')}</h3>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 mt-4 text-white font-mono">{t('about.whoIAm')}</h3>
                 <p className="text-gray-300 mb-8 leading-relaxed">
                   {t('about.whoIAmDesc1')}
                 </p>
