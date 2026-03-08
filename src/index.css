@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 3 7 18; /* Gray-950 (Deep Dark Background) */
+    --color-secondary: 243 244 246; /* Gray-100 (Light Text) */
+    --color-accent: 74 222 128; /* Green-400 (Brighter Green for Dark Mode) */
+    --color-muted: 31 41 55; /* Gray-800 (Muted elements) */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-950 text-gray-100 antialiased selection:bg-green-500/30 selection:text-green-200;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass-panel {
+    @apply bg-gray-900/50 backdrop-blur-md border border-gray-800 shadow-xl;
+  }
+}
