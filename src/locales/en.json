@@ -8,7 +8,7 @@
   },
   "hero": {
     "badge": "Ready to Deploy",
-    "title": "<1>(re)</1><2>engineering <br/> <2>the Future.</2>",
+    "title": "<1>(re)</1><2>engineering <br/> <2>on demand.</2>",
     "description": "Flexible strategic leadership to help organisations navigate complex technology landscapes and drive clear measurable outcomes.",
     "initialiseProject": "Get in touch",
     "viewDocumentation": "About me",
@@ -28,7 +28,7 @@
   "about": {
     "badge": "/ ABOUT_ME",
     "title": "Bringing together Engineering, Data, and AI",
-    "p1": "A product-focused technology executive and people leader with a proven track record of scaling engineering and data teams across startup, midsize, and enterprise levels (Atlassian, Qantas, Prezzee).",
+    "p1": "I'm a product-focused technology executive and people leader with a proven track record of scaling engineering and data teams across startup, midsize, and enterprise levels (Atlassian, Qantas, Prezzee).",
     "p2": "With the advent of AI. my experience puts in a unique position to drive technology strategy for modern organisations, enabling them to harness the power of data and automation to drive growth and innovation.",
     "certifiedExpert": "Strategic leadership",
     "certifiedExpertDesc": " in Engineering, Data, and AI.",
@@ -37,8 +37,8 @@
     "coffeeEnthusiast": "Trusted technology partner",
     "coffeeEnthusiastDesc": " delivering pragmatic solutions to complex problems.",
     "whoIAm": "Who I Am",
-    "whoIAmDesc1": "My name is Vinny Lawrenson-Woods. I'm orginally from the UK I have over 25 years of experience in the UK, US and Australia. I help solve problems for organisations looking to scale or mature.",
-    "whoIAmDesc2": "I can help build, implement, and drive your technical strategy and roadnmap across Engineering, Data and AI.",
+    "whoIAmDesc1": "My name is Vinny Lawrenson-Woods. I'm orginally from the UK I have over 25 years of experience in the UK, US and Australia. I help solve problems for organisations looking to scale and mature.",
+    "whoIAmDesc2": "I can build, implement, and drive your technonolgy strategy or assist and advise your organisation about bridging the gap betweeen Engineering, Data and AI.",
     "stats": {
       "experience": "Years Experience",
       "projects": "Projects Delivered",

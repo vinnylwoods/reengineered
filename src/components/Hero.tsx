@@ -50,15 +50,9 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 h-full w-full bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)] opacity-40"></div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-green-500/10 rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
 
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
+      <div className="mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-36">
         {/* Left Content */}
         <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-           {/* Badge */}
-           <div className="inline-flex items-center rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-sm font-medium text-green-400 backdrop-blur-sm mb-8 animate-fade-in-up">
-             <span className="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-             {t('hero.badge')}
-           </div>
-           
            <h1 className="max-w-lg text-4xl font-bold tracking-tight text-white sm:text-6xl text-balance font-oswald">
              <Trans 
                i18nKey="hero.title" 
@@ -69,12 +63,12 @@ export function Hero() {
              />
            </h1>
            
-           <p className="mt-6 text-lg leading-8 text-gray-400 max-w-xl">
+           <p className="mt-5 text-lg leading-8 text-gray-400 max-w-xl">
              {t('hero.description')}
            </p>
            
            {/* Buttons */}
-           <div className="mt-10 flex items-center gap-x-6">
+           <div className="mt-8 flex items-center gap-x-6">
              <Button size="lg" className="bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-900/20 border border-green-500/50" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                {t('hero.initialiseProject')}
              </Button>
@@ -82,17 +76,6 @@ export function Hero() {
                {t('hero.viewDocumentation')} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
              </a>
            </div>
-           
-           <div className="mt-14 pt-10 border-t border-gray-800">
-            <p className="text-sm font-semibold text-gray-500 mb-4 font-mono uppercase tracking-wider">{t('hero.poweredBy')}</p>
-            <div className="flex gap-x-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-               {/* Tech-focused placeholders */}
-               <span className="text-xl font-bold text-white font-mono">REACT</span>
-               <span className="text-xl font-bold text-white font-mono">NODE</span>
-               <span className="text-xl font-bold text-white font-mono">AI</span>
-               <span className="text-xl font-bold text-white font-mono">DATA</span>
-            </div>
-          </div>
         </div>
         
         {/* Right Content - Terminal Window */}
