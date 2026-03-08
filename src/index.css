@@ -37,4 +37,62 @@
   .glass-panel {
     @apply bg-gray-900/50 backdrop-blur-md border border-gray-800 shadow-xl;
   }
+
+  @keyframes line-fade-in-a {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes line-fade-in-b {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-line {
+    opacity: 0;
+    transform: translateY(8px);
+    animation-name: line-fade-in-a;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    will-change: opacity, transform;
+  }
+
+  .replay .animate-line {
+    animation-name: line-fade-in-b;
+  }
+
+  @keyframes type-reveal-a {
+    from { width: 0ch; }
+    to { width: var(--type-ch); }
+  }
+  @keyframes type-reveal-b {
+    from { width: 0ch; }
+    to { width: var(--type-ch); }
+  }
+
+  .typewriter {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: var(--type-ch);
+    animation-name: type-reveal-a;
+    animation-duration: var(--type-duration, 1.2s);
+    animation-timing-function: steps(var(--type-steps));
+    animation-fill-mode: both;
+  }
+  .replay .typewriter {
+    animation-name: type-reveal-b;
+  }
 }
