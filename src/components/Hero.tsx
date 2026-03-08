@@ -37,7 +37,7 @@ export function Hero() {
            {/* Buttons */}
            <div className="mt-10 flex items-center gap-x-6">
              <Button size="lg" className="bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-900/20 border border-green-500/50" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-               {t('hero.initializeProject')}
+               {t('hero.initialiseProject')}
              </Button>
              <a href="#about" className="text-sm font-semibold leading-6 text-white hover:text-green-400 transition-colors flex items-center gap-2 group">
                {t('hero.viewDocumentation')} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

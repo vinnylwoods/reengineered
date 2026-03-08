@@ -4,13 +4,12 @@
     "about": "About",
     "services": "Services",
     "recommendations": "Recommendations",
-    "contact": "Contact",
     "getInTouch": "Get in touch"
   },
   "hero": {
     "badge": "Systems Operational",
     "title": "<1>(re)</1><2>ngineering <br/> <2>the Future.</2>",
-    "description": "Advanced consulting and content strategies for the digital age. We deconstruct complex problems and engineer scalable, high-performance solutions.",
+    "description": "Flexible strategic leadership to help organisations navigate complex technology landscapes and drive clear measurable outcomes.",
     "initialiseProject": "Initialise Project",
     "viewDocumentation": "View Documentation",
     "poweredBy": "Powered by",
@@ -146,7 +145,7 @@
     "description": "Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you as soon as possible.",
     "infoTitle": "Contact Information",
     "infoDesc": "Prefer to reach out directly? Here's how you can find us.",
-    "address": "123 Business Avenue, Suite 100<br/>New York, NY 10001",
+    "address": "Drummoyne<br/>NSW, 2047",
     "form": {
       "name": "Name",
       "email": "Email",

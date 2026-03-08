@@ -14,7 +14,6 @@ export function Navbar() {
     { name: t('nav.about'), href: '#about' },
     { name: t('nav.services'), href: '#services' },
     { name: t('nav.recommendations'), href: '#recommendations' },
-    { name: t('nav.contact'), href: '#contact' },
   ];
 
   useEffect(() => {
@@ -46,7 +45,7 @@ export function Navbar() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-300 hover:text-green-400 transition-colors relative group">
+              <a key={item.name} href={item.href} className="text-lg font-semibold leading-6 text-gray-300 hover:text-green-400 transition-colors relative group">
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
