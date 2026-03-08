@@ -10,8 +10,8 @@
     "badge": "Ready to Deploy",
     "title": "<1>(re)</1><2>engineering <br/> <2>the Future.</2>",
     "description": "Flexible strategic leadership to help organisations navigate complex technology landscapes and drive clear measurable outcomes.",
-    "initialiseProject": "Initialise Program",
-    "viewDocumentation": "View More",
+    "initialiseProject": "Get in touch",
+    "viewDocumentation": "About me",
     "poweredBy": "Powered by",
     "terminal": {
       "header": "bash — 80x24",
@@ -85,6 +85,15 @@
           "Attracting the best talent",
           "Professional development",
           "Establishing your name in the Technology community"
+        ]
+      },
+      "advisoryMentoring": {
+        "title": "Advisory & Mentoring",
+        "description": "Hands-on advisory and mentoring to accelerate leaders and teams through pragmatic guidance and measurable outcomes.",
+        "features": [
+          "Executive and team coaching",
+          "1:1 mentoring for managers",
+          "Capability uplift and career frameworks"
         ]
       }
     },
