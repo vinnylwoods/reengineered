@@ -9,7 +9,9 @@
   <body>
     <div id="root"></div>
     <!-- Hidden form for Netlify detection -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" method="POST" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>

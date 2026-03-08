@@ -101,8 +101,15 @@ export function Contact() {
             </dl>
           </div>
           
-          <form onSubmit={handleSubmit} className="flex flex-col gap-y-6 bg-gray-900/50 backdrop-blur p-8 shadow-lg ring-1 ring-white/10 rounded-2xl">
+          <form 
+            name="contact" 
+            method="POST" 
+            data-netlify="true"
+            onSubmit={handleSubmit} 
+            className="flex flex-col gap-y-6 bg-gray-900/50 backdrop-blur p-8 shadow-lg ring-1 ring-white/10 rounded-2xl"
+          >
             <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div className="sm:col-span-2">
                 <label htmlFor="name" className="block text-sm font-semibold leading-6 text-white font-mono">
