@@ -54,6 +54,7 @@ export function About() {
                   <img
                     src="/profile.jpg"
                     alt="Profile"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/avatar-placeholder.svg'; }}
                     loading="lazy"
                     className="h-40 w-40 mx-auto sm:mx-0 rounded-2xl object-cover ring-1 ring-white/10 shadow-lg shadow-green-900/20"
                   />
