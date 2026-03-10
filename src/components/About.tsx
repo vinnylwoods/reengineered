@@ -48,14 +48,14 @@ export function About() {
             </div>
           </div>
           
-          <div className="lg:order-last lg:self-center">
-             <div className="relative glass-panel rounded-3xl p-8 md:p-10 w-full max-w-xl mx-auto lg:mx-0">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 mb-4 sm:mb-6 text-center sm:text-left">
+          <div className="lg:order-last">
+             <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-xl ring-1 ring-white/10 p-8 border border-gray-700">
+                <div className="flex items-center gap-4 mb-4">
                   <img
-                    src="/profile.jpg"
+                    src="/profile_image.jpg"
                     alt="Profile"
                     loading="lazy"
-                    className="h-40 w-40 mx-auto sm:mx-0 rounded-2xl object-cover ring-1 ring-white/10 shadow-lg shadow-green-900/20"
+                    className="h-20 w-20 rounded-xl object-cover ring-1 ring-white/10 shadow-lg shadow-green-900/20"
                   />
                   <div>
                     <h3 className="text-3xl font-bold text-white font-mono">{t('about.whoIAm')}</h3>
