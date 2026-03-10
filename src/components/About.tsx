@@ -4,13 +4,6 @@ import { useTranslation } from 'react-i18next';
 export function About() {
   const { t } = useTranslation();
 
-  const stats = [
-    { label: t('about.stats.experience'), value: '25+' },
-    { label: t('about.stats.projects'), value: '50+' },
-    { label: t('about.stats.clients'), value: '100%' },
-    { label: t('about.stats.coffee'), value: '∞' },
-  ];
-
   return (
     <section id="about" className="py-24 bg-gray-900 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -58,28 +51,27 @@ export function About() {
           <div className="lg:order-last lg:self-center lg:justify-self-center">
              <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-xl ring-1 ring-white/10 p-8 border border-gray-700">
                 <div className="flex items-center gap-6 mb-4">
+          <div className="lg:order-last lg:self-center">
+             <div className="relative glass-panel rounded-3xl p-8 md:p-10 w-full max-w-xl mx-auto lg:mx-0">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 mb-4 sm:mb-6 text-center sm:text-left">
                   <img
                     src="/profile_image.jpg"
                     alt="Profile"
                     loading="lazy"
                     className="h-40 w-40 rounded-xl object-cover ring-1 ring-white/10 shadow-lg shadow-green-900/20"
+                    className="h-40 w-40 mx-auto sm:mx-0 rounded-2xl object-cover ring-1 ring-white/10 shadow-lg shadow-green-900/20"
                   />
-                  <h3 className="text-2xl font-bold text-white font-mono">{t('about.whoIAm')}</h3>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white font-mono">{t('about.whoIAm')}</h3>
+                  </div>
                 </div>
-                <p className="text-gray-300 mb-8 leading-relaxed">
-                  {t('about.whoIAmDesc1')}
-                </p>
-                <p className="text-gray-300 mb-8 leading-relaxed">
-                  {t('about.whoIAmDesc2')}
-                </p>
-                
-                <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-700">
-                  {stats.map((stat) => (
-                    <div key={stat.label}>
-                      <span className="block text-3xl font-bold text-green-400 mb-1 font-mono">{stat.value}</span>
-                      <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">{stat.label}</span>
-                    </div>
-                  ))}
+                <div className="pt-4 border-t border-gray-700">
+                  <p className="text-gray-300 mt-4 leading-relaxed text-balance">
+                    {t('about.whoIAmDesc1')}
+                  </p>
+                  <p className="text-gray-300 mt-4 leading-relaxed text-balance">
+                    {t('about.whoIAmDesc2')}
+                  </p>
                 </div>
              </div>
              

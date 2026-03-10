@@ -18,14 +18,14 @@ export function Contact() {
     setStatus('submitting');
 
     try {
-      const response = await fetch('/', {
+      const endpoint = import.meta.env.DEV 
+        ? 'http://localhost:3001/api/send-email' 
+        : '/.netlify/functions/send-email';
+      
+      const response = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          'bot-field': '',
-          ...formData
-        }).toString()
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
 
       if (!response.ok) throw new Error('Failed to submit');
@@ -71,7 +71,7 @@ export function Contact() {
                   </div>
                 </dt>
                 <dd className="py-1.5">
-                  <a className="font-semibold text-white hover:text-green-500 transition-colors font-mono" href="mailto:hello@example.com">
+                  <a className="font-semibold text-white hover:text-green-500 transition-colors font-mono" href="mailto:vinny@reengineered.com.au">
                     vinny@reengineered.com.au
                   </a>
                 </dd>
