@@ -48,7 +48,7 @@ export function Hero() {
     <section id="home" className="relative isolate pt-14 lg:pt-0 min-h-screen flex items-center overflow-hidden bg-gray-950">
       {/* Background Gradients & Grid */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)] opacity-40"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-green-500/10 rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/10 rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
 
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-36">
         {/* Left Content */}
@@ -57,7 +57,7 @@ export function Hero() {
              <Trans 
                i18nKey="hero.title" 
                components={{ 
-                 1: <span className="text-green-500" />, 
+                 1: <span className="text-accent" />, 
                  2: <span className="text-gray-500" /> 
                }} 
              />
@@ -69,10 +69,10 @@ export function Hero() {
            
            {/* Buttons */}
            <div className="mt-8 flex items-center gap-x-6">
-             <Button size="lg" className="bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-900/20 border border-green-500/50" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 border border-primary/50" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                {t('hero.initialiseProject')}
              </Button>
-             <a href="#about" className="text-sm font-semibold leading-6 text-white hover:text-green-400 transition-colors flex items-center gap-2 group">
+             <a href="#about" className="text-sm font-semibold leading-6 text-white hover:text-accent/90 transition-colors flex items-center gap-2 group">
                {t('hero.viewDocumentation')} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
              </a>
            </div>
@@ -88,7 +88,7 @@ export function Hero() {
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80 group-hover:bg-red-500 transition-colors animate-pulse"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80 group-hover:bg-yellow-500 transition-colors animate-pulse" style={{ animationDelay: '0.1s' }}></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80 group-hover:bg-green-500 transition-colors animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                <div className="w-3 h-3 rounded-full bg-accent/80 group-hover:bg-accent transition-colors animate-pulse" style={{ animationDelay: '0.2s' }}></div>
               </div>
               <div className="text-xs text-gray-500 font-mono animate-line" style={{ animationDelay: '0.2s' }}>{t('hero.terminal.header')}</div>
             </div>
@@ -96,50 +96,50 @@ export function Hero() {
             {/* Terminal Content */}
             <div className="p-6 font-mono text-sm text-gray-300 space-y-4 min-h-[300px]">
               <div className="flex animate-line" style={{ animationDelay: '0.4s' }}>
-                <span className="text-green-500 mr-2">➜</span>
-                <span className="text-blue-400 mr-2">~</span>
+                <span className="text-accent mr-2">➜</span>
+                <span className="text-primary mr-2">~</span>
                 <span className="text-gray-100">{t('hero.terminal.command')}</span>
               </div>
               
               <div className="space-y-1 text-gray-400">
                 <div className="flex items-center gap-2 animate-line" style={{ animationDelay: '0.8s' }}>
-                   <span className="text-green-500">✔</span> {t('hero.terminal.loadingCore')}
+                   <span className="text-accent">✔</span> {t('hero.terminal.loadingCore')}
                 </div>
                 <div className="flex items-center gap-2 animate-line" style={{ animationDelay: '1.2s' }}>
-                   <span className="text-green-500">✔</span> {t('hero.terminal.analysingBusiness')}
+                   <span className="text-accent">✔</span> {t('hero.terminal.analysingBusiness')}
                 </div>
                 <div className="flex items-center gap-2 animate-line" style={{ animationDelay: '1.6s' }}>
-                   <span className="text-green-500">✔</span> {t('hero.terminal.optimisingPerformance')}
+                   <span className="text-accent">✔</span> {t('hero.terminal.optimisingPerformance')}
                 </div>
                 <div className="flex items-center gap-2 animate-line" style={{ animationDelay: '2.0s' }}>
-                   <span className="text-green-500">✔</span> {t('hero.terminal.generatingRevenue')}
+                   <span className="text-accent">✔</span> {t('hero.terminal.generatingRevenue')}
                 </div>
               </div>
 
               <div className="pt-4 border-t border-gray-800/50 animate-line" style={{ animationDelay: '3.6s' }}>
                 <div className="text-gray-400 mb-2 animate-line flex items-baseline font-mono" style={{ animationDelay: '4.0s' }}>
                   <span className="inline-block w-3 text-right mr-2 text-gray-500 select-none">&gt;</span>
-                  <Typewriter delay="4.0s" durationSec={1.5}><Trans i18nKey="hero.terminal.strategyCompiled" components={[<span key="0" className="text-blue-400" />]} /></Typewriter>
+                  <Typewriter delay="4.0s" durationSec={1.5}><Trans i18nKey="hero.terminal.strategyCompiled" components={[<span key="0" className="text-primary" />]} /></Typewriter>
                 </div>
                 <div className="text-gray-400 mb-2 animate-line flex items-baseline font-mono" style={{ animationDelay: '5.7s' }}>
                   <span className="inline-block w-3 text-right mr-2 text-gray-500 select-none">&gt;</span>
-                  <Typewriter delay="5.7s" durationSec={1.5}><Trans i18nKey="hero.terminal.growthVector" components={[<span key="0" className="text-blue-400" />]} /></Typewriter>
+                  <Typewriter delay="5.7s" durationSec={1.5}><Trans i18nKey="hero.terminal.growthVector" components={[<span key="0" className="text-primary" />]} /></Typewriter>
                 </div>
                 <div className="text-gray-400 mb-2 animate-line flex items-baseline font-mono" style={{ animationDelay: '7.4s' }}>
                   <span className="inline-block w-3 text-right mr-2 text-gray-500 select-none">&gt;</span>
-                  <Typewriter delay="7.4s" durationSec={1.5}><span className="text-green-400">{t('hero.terminal.readyToDeploy')}</span></Typewriter>
+                  <Typewriter delay="7.4s" durationSec={1.5}><span className="text-accent/90">{t('hero.terminal.readyToDeploy')}</span></Typewriter>
                 </div>
               </div>
               
               <div className="flex pt-2 animate-line" style={{ animationDelay: '9.0s' }}>
-                 <span className="text-green-500 mr-2">➜</span>
-                 <span className="text-blue-400 mr-2">~</span>
+                 <span className="text-accent mr-2">➜</span>
+                 <span className="text-primary mr-2">~</span>
                  <span className="w-2.5 h-5 bg-gray-500 animate-pulse block"></span>
               </div>
             </div>
             
             {/* Background Glow inside terminal */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-green-500/5 rounded-full blur-[50px] pointer-events-none"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-accent/5 rounded-full blur-[50px] pointer-events-none"></div>
           </div>
         </div>
       </div>

@@ -63,7 +63,7 @@ export function Recommendations() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">{t('recommendations.badge')}</h2>
+          <h2 className="text-base font-semibold leading-7 text-accent font-mono tracking-wide">{t('recommendations.badge')}</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t('recommendations.title')}
           </p>
@@ -71,12 +71,12 @@ export function Recommendations() {
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.author.name} className="flex flex-col justify-between bg-gray-900/50 backdrop-blur p-8 shadow-xl ring-1 ring-white/10 rounded-2xl relative border border-transparent hover:border-green-500/20 transition-all duration-300">
-                <Quote className="absolute top-6 right-6 text-green-900/20 w-12 h-12 -z-0" />
+              <div key={testimonial.author.name} className="flex flex-col justify-between bg-gray-900/50 backdrop-blur p-8 shadow-xl ring-1 ring-white/10 rounded-2xl relative border border-transparent hover:border-accent/25 transition-all duration-300">
+                <Quote className="absolute top-6 right-6 text-primary/20 w-12 h-12 -z-0" />
                 <div className="z-10 relative">
                   <div className="flex gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-green-500 fill-current" />
+                      <Star key={i} className="w-5 h-5 text-accent fill-current" />
                     ))}
                   </div>
                   <blockquote className="text-gray-300 text-lg leading-relaxed font-mono text-sm">
@@ -84,10 +84,10 @@ export function Recommendations() {
                   </blockquote>
                 </div>
                 <div className="mt-8 flex items-center gap-x-4 border-t border-gray-800 pt-6">
-                  <img className="h-12 w-12 rounded-full bg-gray-800 ring-2 ring-green-500/50" src={testimonial.author.imageUrl} alt="" />
+                  <img className="h-12 w-12 rounded-full bg-gray-800 ring-2 ring-accent/50" src={testimonial.author.imageUrl} alt="" />
                   <div>
                     <div className="font-semibold text-white font-mono">{testimonial.author.name}</div>
-                    <div className="text-green-500 text-xs font-mono">{testimonial.author.role}</div>
+                    <div className="text-primary text-xs font-mono">{testimonial.author.role}</div>
                   </div>
                 </div>
               </div>

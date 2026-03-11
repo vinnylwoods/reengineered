@@ -23,19 +23,19 @@ export function Footer() {
               {t('footer.description')}
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-500 hover:text-green-500 transition-colors">
+              <a href="#" className="text-gray-500 hover:text-accent transition-colors">
                 <span className="sr-only">GitHub</span>
                 <Github className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-green-500 transition-colors">
+              <a href="#" className="text-gray-500 hover:text-accent transition-colors">
                 <span className="sr-only">Twitter</span>
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-green-500 transition-colors">
+              <a href="#" className="text-gray-500 hover:text-accent transition-colors">
                 <span className="sr-only">LinkedIn</span>
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="mailto:vinny@reengineered.com.au" className="text-gray-500 hover:text-green-500 transition-colors">
+              <a href="mailto:vinny@reengineered.com.au" className="text-gray-500 hover:text-accent transition-colors">
                 <span className="sr-only">Email</span>
                 <Mail className="h-6 w-6" />
               </a>
@@ -48,7 +48,7 @@ export function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {['Home', 'About', 'Services', 'Recommendations'].map((item) => (
                     <li key={item}>
-                      <a href={`#${item.toLowerCase()}`} className="text-sm leading-6 text-gray-400 hover:text-green-500 transition-colors font-mono">
+                      <a href={`#${item.toLowerCase()}`} className="text-sm leading-6 text-gray-400 hover:text-accent transition-colors font-mono">
                         {t(`nav.${item.toLowerCase()}`)}
                       </a>
                     </li>
@@ -59,12 +59,12 @@ export function Footer() {
                 <h3 className="font-semibold leading-6 text-white font-mono">{t('footer.legal')}</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
-                    <button onClick={() => setShowPrivacy(!showPrivacy)} className="text-sm leading-6 text-gray-400 hover:text-green-500 transition-colors text-left font-mono">
+                    <button onClick={() => setShowPrivacy(!showPrivacy)} className="text-sm leading-6 text-gray-400 hover:text-accent transition-colors text-left font-mono">
                       {t('footer.privacyPolicy')}
                     </button>
                   </li>
                   <li>
-                    <button onClick={() => setShowTerms(!showTerms)} className="text-sm leading-6 text-gray-400 hover:text-green-500 transition-colors text-left font-mono">
+                    <button onClick={() => setShowTerms(!showTerms)} className="text-sm leading-6 text-gray-400 hover:text-accent transition-colors text-left font-mono">
                       {t('footer.termsConditions')}
                     </button>
                   </li>
@@ -81,7 +81,7 @@ export function Footer() {
               <div className="mb-8 rounded-xl bg-gray-900/50 p-6 ring-1 ring-white/10 animate-in fade-in slide-in-from-top-4 backdrop-blur">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-lg font-bold text-white font-mono">{t('footer.privacyPolicy')}</h3>
-                  <button onClick={() => setShowPrivacy(false)} className="text-gray-400 hover:text-green-500">✕</button>
+                  <button onClick={() => setShowPrivacy(false)} className="text-gray-400 hover:text-accent">✕</button>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed font-mono">
                   {t('footer.privacyContent')}
@@ -92,7 +92,7 @@ export function Footer() {
               <div className="mb-8 rounded-xl bg-gray-900/50 p-6 ring-1 ring-white/10 animate-in fade-in slide-in-from-top-4 backdrop-blur">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-lg font-bold text-white font-mono">{t('footer.termsConditions')}</h3>
-                  <button onClick={() => setShowTerms(false)} className="text-gray-400 hover:text-green-500">✕</button>
+                  <button onClick={() => setShowTerms(false)} className="text-gray-400 hover:text-accent">✕</button>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed font-mono">
                   {t('footer.termsContent')}
@@ -104,11 +104,11 @@ export function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs leading-5 text-gray-400">
-            &copy; {new Date().getFullYear()} <span className="font-oswald"><span className="font-bold text-green-500">(re)</span>ngineered</span>. {t('footer.rights')}
+            &copy; {new Date().getFullYear()} <span className="font-oswald"><span className="font-bold text-accent">(re)</span>ngineered</span>. {t('footer.rights')}
           </p>
           <button 
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-xs text-gray-400 hover:text-green-400 transition-colors"
+            className="flex items-center gap-2 text-xs text-gray-400 hover:text-accent/90 transition-colors"
           >
             {t('footer.backToTop')} <ArrowUp className="h-3 w-3" />
           </button>

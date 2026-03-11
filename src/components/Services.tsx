@@ -51,7 +51,7 @@ export function Services() {
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">{t('services.badge')}</h2>
+          <h2 className="text-base font-semibold leading-7 text-accent font-mono tracking-wide">{t('services.badge')}</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t('services.title')}
           </p>
@@ -62,10 +62,10 @@ export function Services() {
         
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           {services.map((service) => (
-            <div key={service.title} className="flex flex-col bg-gray-900/50 backdrop-blur rounded-2xl p-8 shadow-xl ring-1 ring-white/10 hover:ring-green-500/50 transition-all duration-300 group border border-transparent hover:border-green-500/20">
+            <div key={service.title} className="flex flex-col bg-gray-900/50 backdrop-blur rounded-2xl p-8 shadow-xl ring-1 ring-white/10 hover:ring-primary/50 transition-all duration-300 group border border-transparent hover:border-accent/25">
               <div className="flex items-center gap-x-4 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-800 group-hover:bg-green-600 transition-colors duration-300 ring-1 ring-white/10">
-                  <service.icon className="h-6 w-6 text-green-500 group-hover:text-white transition-colors duration-300" aria-hidden="true" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-800 group-hover:bg-primary transition-colors duration-300 ring-1 ring-white/10">
+                  <service.icon className="h-6 w-6 text-accent group-hover:text-white transition-colors duration-300" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-bold leading-7 text-white font-mono">{service.title}</h3>
               </div>
@@ -74,14 +74,14 @@ export function Services() {
               <ul className="space-y-2 mb-8">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center text-sm text-gray-500">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
+                    <Check className="h-4 w-4 text-accent mr-2" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
               <div className="mt-auto">
-                <Button variant="outline" size="sm" className="w-full justify-between border-gray-700 text-gray-300 hover:text-white hover:border-green-500 hover:bg-gray-800">
+                <Button variant="outline" size="sm" className="w-full justify-between border-gray-700 text-gray-300 hover:text-white hover:border-primary hover:bg-gray-800">
                   {t('services.learnMore')} <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
@@ -101,7 +101,7 @@ export function Services() {
             {process.map((step) => (
               <div key={step.step} className="relative pl-9 group">
                 <dt className="inline font-semibold text-white">
-                  <span className="absolute left-1 top-1 h-5 w-5 text-green-500 text-xs font-bold font-mono group-hover:text-green-400 transition-colors">{step.step}</span>
+                  <span className="absolute left-1 top-1 h-5 w-5 text-accent text-xs font-bold font-mono group-hover:text-accent/80 transition-colors">{step.step}</span>
                   {step.title}
                 </dt>
                 <dd className="mt-2 text-sm text-gray-500 group-hover:text-gray-400 transition-colors">{step.description}</dd>

@@ -11,7 +11,7 @@ describe('Logo', () => {
   it('applies default accent color', () => {
     render(<Logo />);
     const re = screen.getByText('(re)');
-    expect(re.className).toMatch(/text-green-500/);
+    expect(re.className).toMatch(/text-accent/);
   });
 
   it('applies custom accent color and merges classes', () => {

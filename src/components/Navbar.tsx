@@ -26,7 +26,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-gray-950/80 backdrop-blur-md shadow-lg shadow-green-900/10 border-b border-white/5' : 'bg-transparent'}`}>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-gray-950/80 backdrop-blur-md shadow-lg shadow-primary/10 border-b border-white/5' : 'bg-transparent'}`}>
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
@@ -45,14 +45,14 @@ export function Navbar() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-lg font-semibold leading-6 text-gray-300 hover:text-green-400 transition-colors relative group">
+              <a key={item.name} href={item.href} className="text-lg font-semibold leading-6 text-gray-300 hover:text-accent/90 transition-colors relative group">
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-4">
-            <Button variant="primary" size="sm" onClick={() => window.location.href = '#contact'} className="shadow-lg shadow-green-900/20 hover:shadow-green-500/20 transition-all border border-green-500/20">
+            <Button variant="primary" size="sm" onClick={() => window.location.href = '#contact'} className="shadow-lg shadow-primary/20 hover:shadow-accent/20 transition-all border border-primary/20">
               {t('nav.getInTouch')}
             </Button>
           </div>
@@ -86,7 +86,7 @@ export function Navbar() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:bg-gray-800 hover:text-green-400 transition-colors"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:bg-gray-800 hover:text-accent/90 transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}

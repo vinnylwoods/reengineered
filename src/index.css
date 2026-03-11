@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    --color-primary: 28 25 23;
+    --color-primary: 16 110 190;
     --color-secondary: 245 245 244;
-    --color-accent: 74 222 128;
+    --color-accent: 15 252 190;
     --color-muted: 41 37 36;
   }
 
@@ -17,10 +17,11 @@
   }
   
   body {
-    @apply bg-stone-900 text-stone-100 antialiased selection:bg-green-500/30 selection:text-green-200;
+    @apply bg-stone-900 text-stone-100 antialiased selection:bg-accent/30 selection:text-stone-900;
     background-image:
       radial-gradient(1000px 600px at 15% 10%, rgba(245, 158, 11, 0.12), transparent 60%),
-      radial-gradient(900px 500px at 85% 40%, rgba(34, 197, 94, 0.03), transparent 60%);
+      radial-gradient(900px 500px at 85% 40%, rgba(16, 110, 190, 0.14), transparent 60%),
+      radial-gradient(1100px 700px at 35% 85%, rgba(15, 252, 190, 0.06), transparent 60%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

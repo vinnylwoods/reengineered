@@ -67,7 +67,7 @@ export function Contact() {
       <div className="absolute inset-0 bg-grid-pattern opacity-20 -z-10" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-green-500 font-mono tracking-wide">{t('contact.badge')}</h2>
+          <h2 className="text-base font-semibold leading-7 text-accent font-mono tracking-wide">{t('contact.badge')}</h2>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">{t('contact.title')}</h2>
           <p className="mt-2 text-lg leading-8 text-gray-400">
             {t('contact.description')}
@@ -85,11 +85,11 @@ export function Contact() {
                 <dt className="flex-none">
                   <span className="sr-only">Email</span>
                   <div className="rounded-lg bg-gray-800 p-2 ring-1 ring-white/10">
-                    <Mail className="h-5 w-5 text-green-500" aria-hidden="true" />
+                    <Mail className="h-5 w-5 text-accent" aria-hidden="true" />
                   </div>
                 </dt>
                 <dd className="py-1.5">
-                  <a className="font-semibold text-white hover:text-green-500 transition-colors font-mono" href="mailto:vinny@reengineered.com.au">
+                  <a className="font-semibold text-white hover:text-accent transition-colors font-mono" href="mailto:vinny@reengineered.com.au">
                     vinny@reengineered.com.au
                   </a>
                 </dd>
@@ -98,11 +98,11 @@ export function Contact() {
                 <dt className="flex-none">
                   <span className="sr-only">Phone</span>
                   <div className="rounded-lg bg-gray-800 p-2 ring-1 ring-white/10">
-                    <Phone className="h-5 w-5 text-green-500" aria-hidden="true" />
+                    <Phone className="h-5 w-5 text-accent" aria-hidden="true" />
                   </div>
                 </dt>
                 <dd className="py-1.5">
-                  <a className="font-semibold text-white hover:text-green-500 transition-colors font-mono" href="tel:+61 (0)401 590 258">
+                  <a className="font-semibold text-white hover:text-accent transition-colors font-mono" href="tel:+61 (0)401 590 258">
                     +61 (0)401 590 258
                   </a>
                 </dd>
@@ -111,7 +111,7 @@ export function Contact() {
                 <dt className="flex-none">
                   <span className="sr-only">Address</span>
                   <div className="rounded-lg bg-gray-800 p-2 ring-1 ring-white/10">
-                    <MapPin className="h-5 w-5 text-green-500" aria-hidden="true" />
+                    <MapPin className="h-5 w-5 text-accent" aria-hidden="true" />
                   </div>
                 </dt>
                 <dd className="py-1.5 text-gray-300 font-semibold text-white">
@@ -144,7 +144,7 @@ export function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 transition-shadow font-mono"
+                    className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-shadow font-mono"
                     placeholder={t('contact.form.placeholders.name')}
                   />
                 </div>
@@ -162,7 +162,7 @@ export function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 transition-shadow font-mono"
+                    className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-shadow font-mono"
                     placeholder={t('contact.form.placeholders.email')}
                   />
                 </div>
@@ -179,7 +179,7 @@ export function Contact() {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 transition-shadow resize-none font-mono"
+                    className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-shadow resize-none font-mono"
                     placeholder={t('contact.form.placeholders.message')}
                   />
                 </div>
@@ -197,15 +197,15 @@ export function Contact() {
               </Button>
             </div>
             {status === 'success' && (
-              <div className="rounded-md bg-green-500/10 p-4 mt-2 ring-1 ring-green-500/20">
+              <div className="rounded-md bg-accent/10 p-4 mt-2 ring-1 ring-accent/20">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <svg className="h-5 w-5 text-accent/90" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm font-medium text-green-400 font-mono">{t('contact.form.success')}</p>
+                    <p className="text-sm font-medium text-accent/90 font-mono">{t('contact.form.success')}</p>
                   </div>
                 </div>
               </div>

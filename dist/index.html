@@ -5,13 +5,15 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Business Website</title>
-    <script type="module" crossorigin src="/assets/index-BKiZfkZM.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BViClr2u.css">
+    <script type="module" crossorigin src="/assets/index-VXIHcCgd.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DnAY4DOf.css">
   </head>
   <body>
     <div id="root"></div>
     <!-- Hidden form for Netlify detection -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" method="POST" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
