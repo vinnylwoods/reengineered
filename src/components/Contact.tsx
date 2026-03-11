@@ -18,17 +18,35 @@ export function Contact() {
     setStatus('submitting');
 
     try {
-      const endpoint = import.meta.env.DEV 
-        ? 'http://localhost:3001/api/send-email' 
-        : '/.netlify/functions/send-email';
-      
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+      const submitToNetlifyForms = async () => {
+        return fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            'form-name': 'contact',
+            'bot-field': '',
+            ...formData
+          }).toString()
+        });
+      };
 
-      if (!response.ok) throw new Error('Failed to submit');
+      if (!import.meta.env.DEV) {
+        const response = await fetch('/.netlify/functions/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+          setStatus('success');
+          setFormData({ name: '', email: '', message: '' });
+          setTimeout(() => setStatus('idle'), 3000);
+          return;
+        }
+      }
+
+      const fallbackResponse = await submitToNetlifyForms();
+      if (!fallbackResponse.ok) throw new Error('Failed to submit');
 
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
