@@ -12,6 +12,8 @@ export default {
       colors: {
         // We can use CSS variables for dynamic theme switching if needed
         primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        text: 'rgb(var(--color-text) / <alpha-value>)',
+        background: 'rgb(var(--color-background) / <alpha-value>)',
         secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
         muted: 'rgb(var(--color-muted) / <alpha-value>)',

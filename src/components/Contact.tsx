@@ -63,33 +63,33 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative isolate py-24 sm:py-32 bg-gray-950">
-      <div className="absolute inset-0 bg-grid-pattern opacity-20 -z-10" />
+    <section id="contact" className="relative isolate py-24 sm:py-32 bg-background">
+      <div className="absolute inset-0 bg-grid-pattern opacity-10 -z-10" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold leading-7 text-accent font-mono tracking-wide">{t('contact.badge')}</h2>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">{t('contact.title')}</h2>
-          <p className="mt-2 text-lg leading-8 text-gray-400">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">{t('contact.title')}</h2>
+          <p className="mt-2 text-lg leading-8 text-text/70">
             {t('contact.description')}
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
           <div className="relative">
-            <div className="absolute -inset-4 -z-10 rounded-xl bg-gray-900/50 backdrop-blur ring-1 ring-white/10" />
-            <h3 className="text-2xl font-bold tracking-tight text-white font-mono">{t('contact.infoTitle')}</h3>
-            <p className="mt-6 text-base leading-7 text-gray-400">
+            <div className="absolute -inset-4 -z-10 rounded-xl bg-secondary/80 backdrop-blur ring-1 ring-muted/70" />
+            <h3 className="text-2xl font-bold tracking-tight text-primary font-mono">{t('contact.infoTitle')}</h3>
+            <p className="mt-6 text-base leading-7 text-text/70">
               {t('contact.infoDesc')}
             </p>
-            <dl className="mt-8 space-y-6 text-base leading-7 text-gray-400">
+            <dl className="mt-8 space-y-6 text-base leading-7 text-text/70">
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Email</span>
-                  <div className="rounded-lg bg-gray-800 p-2 ring-1 ring-white/10">
+                  <div className="rounded-lg bg-background p-2 ring-1 ring-muted/70">
                     <Mail className="h-5 w-5 text-accent" aria-hidden="true" />
                   </div>
                 </dt>
                 <dd className="py-1.5">
-                  <a className="font-semibold text-white hover:text-accent transition-colors font-mono" href="mailto:vinny@reengineered.com.au">
+                  <a className="font-semibold text-primary hover:text-accent transition-colors font-mono" href="mailto:vinny@reengineered.com.au">
                     vinny@reengineered.com.au
                   </a>
                 </dd>
@@ -97,12 +97,12 @@ export function Contact() {
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Phone</span>
-                  <div className="rounded-lg bg-gray-800 p-2 ring-1 ring-white/10">
+                  <div className="rounded-lg bg-background p-2 ring-1 ring-muted/70">
                     <Phone className="h-5 w-5 text-accent" aria-hidden="true" />
                   </div>
                 </dt>
                 <dd className="py-1.5">
-                  <a className="font-semibold text-white hover:text-accent transition-colors font-mono" href="tel:+61 (0)401 590 258">
+                  <a className="font-semibold text-primary hover:text-accent transition-colors font-mono" href="tel:+61 (0)401 590 258">
                     +61 (0)401 590 258
                   </a>
                 </dd>
@@ -110,11 +110,11 @@ export function Contact() {
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Address</span>
-                  <div className="rounded-lg bg-gray-800 p-2 ring-1 ring-white/10">
+                  <div className="rounded-lg bg-background p-2 ring-1 ring-muted/70">
                     <MapPin className="h-5 w-5 text-accent" aria-hidden="true" />
                   </div>
                 </dt>
-                <dd className="py-1.5 text-gray-300 font-semibold text-white">
+                <dd className="py-1.5 text-text font-semibold">
                   <Trans i18nKey="contact.address" components={{ br: <br /> }} />
                 </dd>
               </div>
@@ -126,13 +126,13 @@ export function Contact() {
             method="POST" 
             data-netlify="true"
             onSubmit={handleSubmit} 
-            className="flex flex-col gap-y-6 bg-gray-900/50 backdrop-blur p-8 shadow-lg ring-1 ring-white/10 rounded-2xl"
+            className="flex flex-col gap-y-6 bg-secondary p-8 shadow-lg ring-1 ring-muted/70 rounded-2xl border border-muted/70"
           >
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div className="sm:col-span-2">
-                <label htmlFor="name" className="block text-sm font-semibold leading-6 text-white font-mono">
+                <label htmlFor="name" className="block text-sm font-semibold leading-6 text-primary font-mono">
                   {t('contact.form.name')}
                 </label>
                 <div className="mt-2.5">
@@ -144,13 +144,13 @@ export function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-shadow font-mono"
+                    className="block w-full rounded-md border-0 bg-background px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-muted/70 placeholder:text-text/50 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6 transition-shadow font-mono"
                     placeholder={t('contact.form.placeholders.name')}
                   />
                 </div>
               </div>
               <div className="sm:col-span-2">
-                <label htmlFor="email" className="block text-sm font-semibold leading-6 text-white font-mono">
+                <label htmlFor="email" className="block text-sm font-semibold leading-6 text-primary font-mono">
                   {t('contact.form.email')}
                 </label>
                 <div className="mt-2.5">
@@ -162,13 +162,13 @@ export function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-shadow font-mono"
+                    className="block w-full rounded-md border-0 bg-background px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-muted/70 placeholder:text-text/50 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6 transition-shadow font-mono"
                     placeholder={t('contact.form.placeholders.email')}
                   />
                 </div>
               </div>
               <div className="sm:col-span-2">
-                <label htmlFor="message" className="block text-sm font-semibold leading-6 text-white font-mono">
+                <label htmlFor="message" className="block text-sm font-semibold leading-6 text-primary font-mono">
                   {t('contact.form.message')}
                 </label>
                 <div className="mt-2.5">
@@ -179,7 +179,7 @@ export function Contact() {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-gray-950/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-shadow resize-none font-mono"
+                    className="block w-full rounded-md border-0 bg-background px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-muted/70 placeholder:text-text/50 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6 transition-shadow resize-none font-mono"
                     placeholder={t('contact.form.placeholders.message')}
                   />
                 </div>

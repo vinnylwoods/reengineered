@@ -6,10 +6,12 @@
 
 @layer base {
   :root {
-    --color-primary: 16 110 190;
-    --color-secondary: 245 245 244;
-    --color-accent: 15 252 190;
-    --color-muted: 41 37 36;
+    --color-primary: 15 30 61;
+    --color-accent: 44 166 164;
+    --color-background: 255 255 255;
+    --color-secondary: 244 246 248;
+    --color-text: 51 51 51;
+    --color-muted: 189 189 189;
   }
 
   html {
@@ -17,11 +19,8 @@
   }
   
   body {
-    @apply bg-stone-900 text-stone-100 antialiased selection:bg-accent/30 selection:text-stone-900;
-    background-image:
-      radial-gradient(1000px 600px at 15% 10%, rgba(245, 158, 11, 0.12), transparent 60%),
-      radial-gradient(900px 500px at 85% 40%, rgba(16, 110, 190, 0.14), transparent 60%),
-      radial-gradient(1100px 700px at 35% 85%, rgba(15, 252, 190, 0.06), transparent 60%);
+    @apply bg-background text-text antialiased selection:bg-accent/20 selection:text-background;
+    background-image: radial-gradient(900px 500px at 70% 15%, rgb(var(--color-accent) / 0.12), transparent 60%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,8 +31,8 @@
   .bg-grid-pattern {
     background-size: 40px 40px;
     background-image: 
-      linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgb(var(--color-primary) / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--color-primary) / 0.06) 1px, transparent 1px);
     mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
   }
   
@@ -42,7 +41,7 @@
   }
   
   .glass-panel {
-    @apply bg-stone-800/35 backdrop-blur-md border border-stone-500 shadow-xl;
+    @apply bg-secondary/80 backdrop-blur-md border border-muted/70 shadow-xl;
   }
 
   @keyframes line-fade-in-a {
@@ -102,13 +101,4 @@
   .replay .typewriter {
     animation-name: type-reveal-b;
   }
-
-  .bg-gray-950 { background-color: #1c1917; }
-  .bg-gray-900\/50 { background-color: rgba(41, 37, 36, 0.5); }
-  .bg-gray-800 { background-color: #292524; }
-  .bg-gray-800\/50 { background-color: rgba(41, 37, 36, 0.5); }
-  .border-gray-800 { border-color: #57534e; }
-  .border-gray-700 { border-color: #78716c; }
-  .text-gray-500 { color: #b0aba5; }
-  .text-gray-400 { color: #e7e5e4; }
 }

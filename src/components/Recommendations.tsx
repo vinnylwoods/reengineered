@@ -38,11 +38,11 @@ export function Recommendations() {
   ];
 
   return (
-    <section id="recommendations" className="py-24 bg-gray-950 relative isolate overflow-hidden">
+    <section id="recommendations" className="py-24 bg-secondary relative isolate overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 opacity-20">
           <svg
-            className="absolute left-[50%] top-0 h-[48rem] w-[128rem] -translate-x-1/2 stroke-gray-800 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+            className="absolute left-[50%] top-0 h-[48rem] w-[128rem] -translate-x-1/2 stroke-primary/10 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
             aria-hidden="true"
           >
             <defs>
@@ -64,30 +64,30 @@ export function Recommendations() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-base font-semibold leading-7 text-accent font-mono tracking-wide">{t('recommendations.badge')}</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <p className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             {t('recommendations.title')}
           </p>
         </div>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.author.name} className="flex flex-col justify-between bg-gray-900/50 backdrop-blur p-8 shadow-xl ring-1 ring-white/10 rounded-2xl relative border border-transparent hover:border-accent/25 transition-all duration-300">
-                <Quote className="absolute top-6 right-6 text-primary/20 w-12 h-12 -z-0" />
+              <div key={testimonial.author.name} className="flex flex-col justify-between bg-background p-8 shadow-xl ring-1 ring-muted/70 rounded-2xl relative border border-muted/70 hover:border-accent/40 transition-all duration-300">
+                <Quote className="absolute top-6 right-6 text-primary/10 w-12 h-12 -z-0" />
                 <div className="z-10 relative">
                   <div className="flex gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 text-accent fill-current" />
                     ))}
                   </div>
-                  <blockquote className="text-gray-300 text-lg leading-relaxed font-mono text-sm">
+                  <blockquote className="text-text/70 text-lg leading-relaxed font-mono text-sm">
                     <p>"{testimonial.body}"</p>
                   </blockquote>
                 </div>
-                <div className="mt-8 flex items-center gap-x-4 border-t border-gray-800 pt-6">
-                  <img className="h-12 w-12 rounded-full bg-gray-800 ring-2 ring-accent/50" src={testimonial.author.imageUrl} alt="" />
+                <div className="mt-8 flex items-center gap-x-4 border-t border-muted/70 pt-6">
+                  <img className="h-12 w-12 rounded-full bg-secondary ring-2 ring-accent/40" src={testimonial.author.imageUrl} alt="" />
                   <div>
-                    <div className="font-semibold text-white font-mono">{testimonial.author.name}</div>
-                    <div className="text-primary text-xs font-mono">{testimonial.author.role}</div>
+                    <div className="font-semibold text-primary font-mono">{testimonial.author.name}</div>
+                    <div className="text-text/60 text-xs font-mono">{testimonial.author.role}</div>
                   </div>
                 </div>
               </div>

@@ -8,13 +8,17 @@ import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-background text-text">
       <Navbar />
       <main>
         <Hero />
+        <div aria-hidden="true" className="h-10 bg-gradient-to-b from-background to-secondary" />
         <About />
+        <div aria-hidden="true" className="h-10 bg-gradient-to-b from-secondary to-background" />
         <Services />
+        <div aria-hidden="true" className="h-10 bg-gradient-to-b from-background to-secondary" />
         <Recommendations />
+        <div aria-hidden="true" className="h-10 bg-gradient-to-b from-secondary to-background" />
         <Contact />
       </main>
       <Footer />
