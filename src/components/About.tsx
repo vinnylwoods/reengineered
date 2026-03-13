@@ -11,7 +11,7 @@ export function About() {
           
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-accent font-mono tracking-wide">{t('about.badge')}</h2>
+              <h2 className="text-base font-semibold leading-7 text-accent-strong font-mono tracking-wide">{t('about.badge')}</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
                 {t('about.title')}
               </p>
@@ -49,7 +49,7 @@ export function About() {
           </div>
           
           <div className="lg:order-last lg:pt-4 lg:justify-self-center">
-             <div className="relative glass-panel bg-background/80 rounded-3xl p-8 md:p-10 w-full max-w-lg mx-auto">
+             <div className="relative glass-panel bg-background/80 rounded-3xl p-8 md:p-10 w-full max-w-lg mx-auto border-l-4 border-l-accent/80">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 mb-6 text-center sm:text-left">
                   <img
                     src="/profile_image.jpg?v=1"

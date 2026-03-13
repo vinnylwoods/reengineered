@@ -5,6 +5,8 @@ describe('Services', () => {
   it('renders all service cards with titles and features', () => {
     render(<Services />);
     // Titles from translations
+    expect(screen.getByText('Advisory & Mentoring')).toBeInTheDocument();
+    expect(screen.getByText('Design & delivery of Workshops')).toBeInTheDocument();
     expect(screen.getByText('Technology Strategy')).toBeInTheDocument();
     expect(screen.getByText('Operational Excellence')).toBeInTheDocument();
     expect(screen.getByText('Maturity Assessment')).toBeInTheDocument();

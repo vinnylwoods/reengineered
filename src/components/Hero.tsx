@@ -69,17 +69,31 @@ export function Hero() {
            
            {/* Buttons */}
            <div className="mt-8 flex items-center gap-x-6">
-             <Button size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+             <Button variant="primary" size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                {t('hero.initialiseProject')}
              </Button>
-             <a href="#about" className="text-sm font-semibold leading-6 text-primary hover:text-accent transition-colors flex items-center gap-2 group">
-               {t('hero.viewDocumentation')} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-             </a>
+             <Button
+               variant="outline"
+               size="lg"
+               className="gap-2 group"
+               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+             >
+               {t('hero.viewDocumentation')}{' '}
+               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+             </Button>
            </div>
         </div>
         
         {/* Right Content - Terminal Window */}
-        <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow w-full max-w-lg mx-auto lg:mx-0">
+        <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow w-full max-w-lg mx-auto lg:mx-0 relative">
+          <div
+            aria-hidden="true"
+            className="terminal-glow absolute -inset-10 bg-[radial-gradient(700px_380px_at_50%_20%,rgba(44,166,164,0.32),transparent_60%)] blur-3xl pointer-events-none"
+          />
+          <div
+            aria-hidden="true"
+            className="terminal-glow-delayed absolute -inset-14 bg-[radial-gradient(650px_360px_at_35%_65%,rgba(44,166,164,0.18),transparent_65%)] blur-3xl pointer-events-none"
+          />
           <div
             className={`relative rounded-xl bg-primary border border-muted/40 backdrop-blur-xl shadow-2xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-500 group ${replay ? 'replay' : ''}`}
           >
@@ -134,12 +148,9 @@ export function Hero() {
               <div className="flex pt-2 animate-line" style={{ animationDelay: '9.0s' }}>
                  <span className="text-accent mr-2">➜</span>
                  <span className="text-background/80 mr-2">~</span>
-                 <span className="w-2.5 h-5 bg-background/70 animate-pulse block"></span>
+                 <span className="w-2.5 h-5 bg-background/80 blink-cursor block"></span>
               </div>
             </div>
-            
-            {/* Background Glow inside terminal */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-accent/5 rounded-full blur-[50px] pointer-events-none"></div>
           </div>
         </div>
       </div>

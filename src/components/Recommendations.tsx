@@ -63,7 +63,7 @@ export function Recommendations() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-accent font-mono tracking-wide">{t('recommendations.badge')}</h2>
+          <h2 className="text-base font-semibold leading-7 text-accent-strong font-mono tracking-wide">{t('recommendations.badge')}</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             {t('recommendations.title')}
           </p>

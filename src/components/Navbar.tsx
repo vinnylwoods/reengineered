@@ -94,7 +94,7 @@ export function Navbar() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <Button className="w-full justify-center" onClick={() => {
+                  <Button variant="primary" className="w-full justify-center" onClick={() => {
                     setMobileMenuOpen(false);
                     window.location.href = '#contact';
                   }}>

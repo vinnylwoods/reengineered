@@ -95,6 +95,15 @@
           "1:1 mentoring for managers",
           "Capability uplift and career frameworks"
         ]
+      },
+      "workshops": {
+        "title": "Design & delivery of Workshops",
+        "description": "High-impact workshops that align stakeholders, clarify priorities, and produce actionable outcomes.",
+        "features": [
+          "Agenda and goal design",
+          "Facilitation and alignment",
+          "Decision logs and action plans"
+        ]
       }
     },
     "learnMore": "Learn more",

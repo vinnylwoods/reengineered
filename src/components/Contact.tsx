@@ -46,7 +46,16 @@ export function Contact() {
       }
 
       const fallbackResponse = await submitToNetlifyForms();
-      if (!fallbackResponse.ok) throw new Error('Failed to submit');
+      if (!fallbackResponse.ok) {
+        const isLocalDev =
+          import.meta.env.DEV &&
+          (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+        const isDevRouteNotHandled = fallbackResponse.status === 404 || fallbackResponse.status === 405;
+
+        if (!(isLocalDev && isDevRouteNotHandled)) {
+          throw new Error('Failed to submit');
+        }
+      }
 
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
@@ -67,7 +76,7 @@ export function Contact() {
       <div className="absolute inset-0 bg-grid-pattern opacity-10 -z-10" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-accent font-mono tracking-wide">{t('contact.badge')}</h2>
+          <h2 className="text-base font-semibold leading-7 text-accent-strong font-mono tracking-wide">{t('contact.badge')}</h2>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">{t('contact.title')}</h2>
           <p className="mt-2 text-lg leading-8 text-text/70">
             {t('contact.description')}
@@ -126,7 +135,7 @@ export function Contact() {
             method="POST" 
             data-netlify="true"
             onSubmit={handleSubmit} 
-            className="flex flex-col gap-y-6 bg-secondary p-8 shadow-lg ring-1 ring-muted/70 rounded-2xl border border-muted/70"
+            className="flex flex-col gap-y-6 glass-panel rounded-2xl p-8 ring-1 ring-muted/70 border border-muted/70 border-l-4 border-l-accent/80"
           >
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />

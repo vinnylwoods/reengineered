@@ -8,6 +8,7 @@
   :root {
     --color-primary: 15 30 61;
     --color-accent: 44 166 164;
+    --color-accent-strong: 22 124 122;
     --color-background: 255 255 255;
     --color-secondary: 244 246 248;
     --color-text: 51 51 51;
@@ -100,5 +101,43 @@
   }
   .replay .typewriter {
     animation-name: type-reveal-b;
+  }
+
+  @keyframes cursor-blink {
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  .blink-cursor {
+    display: inline-block;
+    animation: cursor-blink 1.1s steps(1) infinite;
+  }
+
+  @keyframes terminal-glow-drift {
+    0% {
+      transform: translate3d(-1.5%, -1%, 0) scale(1);
+      opacity: 0.55;
+    }
+    50% {
+      transform: translate3d(1.5%, 1%, 0) scale(1.05);
+      opacity: 0.85;
+    }
+    100% {
+      transform: translate3d(-1.5%, -1%, 0) scale(1);
+      opacity: 0.55;
+    }
+  }
+
+  .terminal-glow {
+    animation: terminal-glow-drift 12s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  .terminal-glow-delayed {
+    animation: terminal-glow-drift 16s ease-in-out infinite;
+    animation-delay: -6s;
+    will-change: transform, opacity;
   }
 }

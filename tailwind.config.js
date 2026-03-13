@@ -16,6 +16,7 @@ export default {
         background: 'rgb(var(--color-background) / <alpha-value>)',
         secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        'accent-strong': 'rgb(var(--color-accent-strong) / <alpha-value>)',
         muted: 'rgb(var(--color-muted) / <alpha-value>)',
       },
       container: {
