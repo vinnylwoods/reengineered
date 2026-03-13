@@ -1,14 +1,40 @@
 /* eslint-disable no-console */
-const express = require('express');
-const cors = require('cors');
-const nodemailer = require('nodemailer');
-require('dotenv').config();
+import express from 'express';
+import cors from 'cors';
+import nodemailer from 'nodemailer';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import sqlite3 from 'sqlite3';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+
+const dbFilePath = process.env.CONTACT_DB_PATH || path.join(__dirname, 'contact.sqlite');
+const db = new sqlite3.Database(dbFilePath);
+
+db.serialize(() => {
+  db.run(
+    `
+      CREATE TABLE IF NOT EXISTS contact_submissions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        message TEXT NOT NULL,
+        userAgent TEXT,
+        createdAt TEXT NOT NULL
+      )
+    `
+  );
+});
 
 function buildTransporter() {
   const service = process.env.EMAIL_SERVICE;
@@ -41,12 +67,40 @@ function buildTransporter() {
   });
 }
 
+app.post('/api/contact', (req, res) => {
+  const { name, email, message } = req.body || {};
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  const createdAt = new Date().toISOString();
+  const userAgent = req.get('user-agent') || null;
+
+  db.run(
+    'INSERT INTO contact_submissions (name, email, message, userAgent, createdAt) VALUES (?, ?, ?, ?, ?)',
+    [name, email, message, userAgent, createdAt],
+    function onInsert(err) {
+      if (err) {
+        console.error('DB insert error:', err.message);
+        return res.status(500).json({ error: 'Failed to store submission' });
+      }
+
+      res.json({ ok: true, id: this.lastID });
+    }
+  );
+});
+
 app.post('/api/send-email', async (req, res) => {
   const { name, email, message } = req.body || {};
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
   try {
+    if (process.env.EMAIL_DRY_RUN === 'true') {
+      console.log('[email] DRY RUN: would send mail', { name, email, message });
+      return res.json({ ok: true, dryRun: true });
+    }
+
     const transporter = buildTransporter();
     const from = process.env.EMAIL_FROM || process.env.EMAIL_USER;
     const to = process.env.EMAIL_TO || process.env.EMAIL_USER;
@@ -61,6 +115,6 @@ app.post('/api/send-email', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`[email-server] Listening on http://localhost:${PORT}`);
+  console.log(`[server] Listening on http://localhost:${PORT}`);
+  console.log(`[server] Contact DB at ${dbFilePath}`);
 });
-

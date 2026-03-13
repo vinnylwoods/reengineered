@@ -16,7 +16,7 @@ describe('Contact', () => {
   });
 
   it('submits successfully and shows success alert', async () => {
-    const fetchMock = vi.spyOn(global, 'fetch' as any).mockResolvedValue({ ok: true });
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response(null, { status: 200 }));
     render(<Contact />);
     fireEvent.change(screen.getByLabelText('Name'), { target: { value: 'John' } });
     fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'john@example.com' } });
@@ -29,7 +29,7 @@ describe('Contact', () => {
   });
 
   it('handles submission error and shows error alert', async () => {
-    vi.spyOn(global, 'fetch' as any).mockResolvedValue({ ok: false });
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response(null, { status: 500 }));
     render(<Contact />);
     fireEvent.change(screen.getByLabelText('Name'), { target: { value: 'John' } });
     fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'john@example.com' } });

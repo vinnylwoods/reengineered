@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Github, Twitter, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 import { Logo } from './ui/Logo';
 import { useTranslation } from 'react-i18next';
 
@@ -24,15 +24,11 @@ export function Footer() {
               {t('footer.description')}
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-background/60 hover:text-accent transition-colors">
+              <a href="https://github.com/vinnylwoods" className="text-background/60 hover:text-accent transition-colors">
                 <span className="sr-only">GitHub</span>
                 <Github className="h-6 w-6" />
               </a>
-              <a href="#" className="text-background/60 hover:text-accent transition-colors">
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-background/60 hover:text-accent transition-colors">
+              <a href="https://www.linkedin.com/in/vinnylawrensonwoods/" className="text-background/60 hover:text-accent transition-colors">
                 <span className="sr-only">LinkedIn</span>
                 <Linkedin className="h-6 w-6" />
               </a>

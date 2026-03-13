@@ -30,6 +30,38 @@ export function Contact() {
         });
       };
 
+      const isLocalDev =
+        import.meta.env.DEV &&
+        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+      if (isLocalDev) {
+        try {
+          const emailResponse = await fetch('http://localhost:3001/api/send-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
+
+          if (!emailResponse.ok) {
+            throw new Error('Failed to send email');
+          }
+
+          // Best-effort: also persist the submission locally
+          await fetch('http://localhost:3001/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
+
+          setStatus('success');
+          setFormData({ name: '', email: '', message: '' });
+          setTimeout(() => setStatus('idle'), 3000);
+          return;
+        } catch {
+          throw new Error('Local contact server is not running');
+        }
+      }
+
       if (!import.meta.env.DEV) {
         const response = await fetch('/.netlify/functions/send-email', {
           method: 'POST',
@@ -47,9 +79,6 @@ export function Contact() {
 
       const fallbackResponse = await submitToNetlifyForms();
       if (!fallbackResponse.ok) {
-        const isLocalDev =
-          import.meta.env.DEV &&
-          (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
         const isDevRouteNotHandled = fallbackResponse.status === 404 || fallbackResponse.status === 405;
 
         if (!(isLocalDev && isDevRouteNotHandled)) {
