@@ -63,18 +63,25 @@ export function Contact() {
       }
 
       if (!import.meta.env.DEV) {
-        const response = await fetch('/.netlify/functions/send-email', {
+        const emailResponse = await fetch('/.netlify/functions/send-email', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
         });
 
-        if (response.ok) {
-          setStatus('success');
-          setFormData({ name: '', email: '', message: '' });
-          setTimeout(() => setStatus('idle'), 3000);
-          return;
+        if (!emailResponse.ok) {
+          throw new Error('Failed to send email');
         }
+
+        const formResponse = await submitToNetlifyForms();
+        if (!formResponse.ok) {
+          throw new Error('Failed to store submission');
+        }
+
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 3000);
+        return;
       }
 
       const fallbackResponse = await submitToNetlifyForms();

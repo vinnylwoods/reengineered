@@ -66,6 +66,9 @@ exports.handler = async (event) => {
     const text = `Name: ${name}\nEmail: ${email}\n\n${message}`;
 
     await transporter.sendMail({ from, to, subject, text, replyTo: email });
+    const ackSubject = process.env.EMAIL_ACK_SUBJECT || "Thanks — we've received your message";
+    const ackText = `Hi ${name},\n\nThanks for reaching out — we’ve received your message and will get back to you soon.\n\nYour message:\n${message}\n`;
+    await transporter.sendMail({ from, to: email, subject: ackSubject, text: ackText, replyTo: to });
 
     return {
       statusCode: 200,
