@@ -100,55 +100,51 @@ export function Services() {
           ))}
         </div>
 
-        <div className="relative mx-auto mt-20 overflow-hidden rounded-3xl bg-primary text-background shadow-xl ring-1 ring-background/10">
+        <div className="mx-auto mt-20 max-w-3xl text-center">
+          <h3 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl font-mono">
+            {t('services.process.title')}
+          </h3>
+          <p className="mt-3 text-sm leading-6 text-text/70">
+            {t('services.process.description')}
+          </p>
+
+          <div className="mt-6 flex justify-center">
+            <Button
+              variant="primary"
+              size="md"
+              className="w-full sm:w-auto justify-center gap-2"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              {t('hero.initialiseProject')} <ArrowRight className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+
+        <div className="relative mx-auto mt-10 overflow-hidden rounded-3xl bg-primary text-background shadow-xl ring-1 ring-background/10">
           <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(900px_500px_at_50%_0%,rgba(44,166,164,0.22),transparent_62%)]" />
           <div className="relative px-6 py-10 sm:px-10 lg:px-12">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
-              <div className="lg:col-span-4">
-                <h3 className="text-2xl font-bold tracking-tight text-background sm:text-3xl font-mono">
-                  {t('services.process.title')}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-background/70">
-                  {t('services.process.description')}
-                </p>
-
-                <div className="mt-6">
-                  <Button
-                    variant="primary"
-                    size="md"
-                    className="w-full sm:w-auto justify-center gap-2"
-                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    {t('hero.initialiseProject')} <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-
-              <div className="lg:col-span-8">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {process.map((step) => (
-                    <div
-                      key={step.step}
-                      className="relative rounded-2xl bg-background/5 p-5 ring-1 ring-background/10 backdrop-blur"
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className="mt-0.5 flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-accent/10 ring-1 ring-accent/20">
-                          <step.icon className="h-4 w-4 text-accent" aria-hidden="true" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="flex items-baseline gap-2">
-                            <span className="text-xs font-bold font-mono text-accent">{step.step}</span>
-                            <div className="min-w-0 font-semibold text-background font-mono leading-snug">{step.title}</div>
-                          </div>
-                          <div className="mt-2 text-sm leading-6 text-background/65 break-words hyphens-auto">
-                            {step.description}
-                          </div>
-                        </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {process.map((step) => (
+                <div
+                  key={step.step}
+                  className="relative rounded-2xl bg-background/5 p-5 ring-1 ring-background/10 backdrop-blur"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-accent/10 ring-1 ring-accent/20">
+                      <step.icon className="h-4 w-4 text-accent" aria-hidden="true" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-xs font-bold font-mono text-accent">{step.step}</span>
+                        <div className="min-w-0 font-semibold text-background font-mono leading-snug">{step.title}</div>
+                      </div>
+                      <div className="mt-2 text-sm leading-6 text-background/65 break-words hyphens-auto">
+                        {step.description}
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

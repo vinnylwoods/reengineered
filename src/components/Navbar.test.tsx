@@ -7,7 +7,6 @@ describe('Navbar', () => {
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('About')).toBeInTheDocument();
     expect(screen.getByText('Services')).toBeInTheDocument();
-    expect(screen.getByText('Recommendations')).toBeInTheDocument();
     expect(screen.getByText('Get in touch')).toBeInTheDocument();
   });
 });

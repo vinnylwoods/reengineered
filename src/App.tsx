@@ -2,7 +2,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Services } from './components/Services';
-import { Recommendations } from './components/Recommendations';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
@@ -16,9 +15,6 @@ function App() {
         <About />
         <div aria-hidden="true" className="h-10 bg-gradient-to-b from-secondary to-background" />
         <Services />
-        <div aria-hidden="true" className="h-10 bg-gradient-to-b from-background to-secondary" />
-        <Recommendations />
-        <div aria-hidden="true" className="h-10 bg-gradient-to-b from-secondary to-background" />
         <Contact />
       </main>
       <Footer />
