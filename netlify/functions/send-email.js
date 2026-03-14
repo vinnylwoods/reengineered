@@ -49,12 +49,21 @@ exports.handler = async (event) => {
   try {
     const body = JSON.parse(event.body || '{}');
     const { name, email, message } = body;
+    const normalizedEmail = typeof email === 'string' ? email.trim() : '';
+    const isEmailLikelyValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail);
 
-    if (!name || !email || !message) {
+    if (!name || !normalizedEmail || !message) {
       return {
         statusCode: 400,
         headers: corsHeaders,
         body: JSON.stringify({ error: 'Missing required fields' }),
+      };
+    }
+    if (!isEmailLikelyValid) {
+      return {
+        statusCode: 400,
+        headers: corsHeaders,
+        body: JSON.stringify({ error: 'Invalid email address' }),
       };
     }
 
@@ -63,12 +72,12 @@ exports.handler = async (event) => {
     const from = process.env.EMAIL_FROM || process.env.EMAIL_USER;
     const to = process.env.EMAIL_TO || process.env.EMAIL_USER;
     const subject = `New contact form submission from ${name}`;
-    const text = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const text = `Name: ${name}\nEmail: ${normalizedEmail}\n\n${message}`;
 
-    await transporter.sendMail({ from, to, subject, text, replyTo: email });
+    await transporter.sendMail({ from, to, subject, text, replyTo: normalizedEmail });
     const ackSubject = process.env.EMAIL_ACK_SUBJECT || "Thanks — we've received your message";
     const ackText = `Hi ${name},\n\nThanks for reaching out — we’ve received your message and will get back to you soon.\n\nYour message:\n${message}\n`;
-    await transporter.sendMail({ from, to: email, subject: ackSubject, text: ackText, replyTo: to });
+    await transporter.sendMail({ from, to: normalizedEmail, subject: ackSubject, text: ackText, replyTo: to });
 
     return {
       statusCode: 200,

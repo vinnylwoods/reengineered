@@ -18,6 +18,12 @@ export function Contact() {
     setStatus('submitting');
 
     try {
+      const normalizedFormData = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim()
+      };
+
       const submitToNetlifyForms = async () => {
         return fetch('/', {
           method: 'POST',
@@ -25,7 +31,7 @@ export function Contact() {
           body: new URLSearchParams({
             'form-name': 'contact',
             'bot-field': '',
-            ...formData
+            ...normalizedFormData
           }).toString()
         });
       };
@@ -39,7 +45,7 @@ export function Contact() {
           const emailResponse = await fetch('http://localhost:3001/api/send-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(normalizedFormData)
           });
 
           if (!emailResponse.ok) {
@@ -50,7 +56,7 @@ export function Contact() {
           await fetch('http://localhost:3001/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(normalizedFormData)
           });
 
           setStatus('success');
@@ -66,7 +72,7 @@ export function Contact() {
         const emailResponse = await fetch('/.netlify/functions/send-email', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData)
+          body: JSON.stringify(normalizedFormData)
         });
 
         if (!emailResponse.ok) {
